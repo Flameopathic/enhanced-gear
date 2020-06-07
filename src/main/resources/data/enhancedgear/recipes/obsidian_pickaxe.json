@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        " e ",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:obsidian"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "e": {
+            "item": "minecraft:diamond_pickaxe"
+        }
+    },
+    "result": {
+        "item": "enhancedgear:obsidian_pickaxe",
+        "count": 1
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#e#",
+        "# #",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:obsidian"
+        },
+        "e": {
+            "item": "minecraft:diamond_"
+        }
+    },
+    "result": "enhancedgear:obsidian_"
+}
