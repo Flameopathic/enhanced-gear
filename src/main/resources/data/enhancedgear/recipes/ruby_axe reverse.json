@@ -2,19 +2,19 @@
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "##",
-        " /",
+        "#/",
         " /"
     ],
     "key": {
         "#": {
-            "item": "minecraft:emerald"
+            "item": "enhancedgear:ruby"
         },
         "/": {
             "item": "minecraft:stick"
         }
     },
     "result": {
-        "item": "enhancedgear:emerald_hoe",
+        "item": "enhancedgear:ruby_axe",
         "count": 1
     }
-}o
+}
