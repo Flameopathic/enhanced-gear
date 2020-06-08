@@ -10,17 +10,17 @@ import net.minecraft.sound.SoundEvents;
 
 public class EmeraldArmor implements ArmorMaterial {
 
-    private static final int[] baseDura = new int[] {1, 1, 1, 1};
+    private static final int[] baseDura = new int[] {13, 15, 16, 11};
     private static final double[] protection = new double[] {1, 5, 6, 3};
 
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return baseDura[slot.getEntitySlotId()];
+        return baseDura[slot.getEntitySlotId()]*7;
     }
 
     @Override
     public int getProtectionAmount(EquipmentSlot slot) {
-        return (int) (protection[slot.getEntitySlotId()]* 1.4);
+        return (int) (protection[slot.getEntitySlotId()]* 2);
     }
 
     @Override
