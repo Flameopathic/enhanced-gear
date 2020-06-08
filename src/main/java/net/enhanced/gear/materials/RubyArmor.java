@@ -35,7 +35,7 @@ public class RubyArmor implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(EnhancedGear.ruby);
+        return Ingredient.ofItems(EnhancedGear.RUBY);
     }
 
     @Override

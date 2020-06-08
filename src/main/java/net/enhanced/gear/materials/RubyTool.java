@@ -33,7 +33,7 @@ public class RubyTool implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(EnhancedGear.ruby);
+        return Ingredient.ofItems(EnhancedGear.RUBY);
     }
     
 }
