@@ -9,5 +9,8 @@
             "item": "enhancedgear:ruby"
         }
     },
-    "result": "enhancedgear:ruby_boots"
+    "result": {
+        "item": "enhancedgear:ruby_boots",
+        "count": 1
+    }
 }

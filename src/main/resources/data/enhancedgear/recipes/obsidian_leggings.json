@@ -13,5 +13,8 @@
             "item": "minecraft:diamond_leggings"
         }
     },
-    "result": "enhancedgear:obsidian_leggings"
+    "result": {
+        "item": "enhancedgear:obsidian_leggings",
+        "count": 1
+    }
 }

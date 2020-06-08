@@ -10,5 +10,8 @@
             "item": "minecraft:emerald"
         }
     },
-    "result": "enhancedgear:emerald_chestplate"
+    "result": {
+        "item": "enhancedgear:emerald_chestplate",
+        "count": 1
+    }
 }

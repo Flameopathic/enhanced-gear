@@ -1,6 +1,5 @@
 package net.enhanced.gear.materials;
 
-import net.enhanced.gear.EnhancedGear;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Items;

@@ -10,5 +10,8 @@
             "item": "minecraft:emerald"
         }
     },
-    "result": "enhancedgear:emerald_leggings"
+    "result": {
+        "item": "enhancedgear:emerald_leggings",
+        "count": 1
+    }
 }

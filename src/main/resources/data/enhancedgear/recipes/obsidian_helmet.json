@@ -12,5 +12,8 @@
             "item": "minecraft:diamond_helmet"
         }
     },
-    "result": "enhancedgear:obsidian_helmet"
+    "result": {
+        "item": "enhancedgear:obsidian_helmet",
+        "count": 1
+    }
 }

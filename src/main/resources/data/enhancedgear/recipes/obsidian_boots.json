@@ -12,5 +12,8 @@
             "item": "minecraft:diamond_boots"
         }
     },
-    "result": "enhancedgear:obsidian_boots"
+    "result": {
+        "item": "enhancedgear:obsidian_boots",
+        "count": 1
+    }
 }

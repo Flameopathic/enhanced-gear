@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:stone"
+    },
+    "result": "enhancedgear:stone_leg_plating",
+    "count": 1
+}

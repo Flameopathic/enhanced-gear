@@ -2,15 +2,16 @@
     "type": "minecraft:crafting_shaped",
     "pattern": [
         "###",
-        "# #"
+        "###",
+        "###"
     ],
     "key": {
         "#": {
-            "item": "minecraft:emerald"
+            "item": "enhancedgear:ruby"
         }
     },
     "result": {
-        "item": "enhancedgear:emerald_helmet",
+        "item": "enhancedgear:ruby_block",
         "count": 1
     }
 }

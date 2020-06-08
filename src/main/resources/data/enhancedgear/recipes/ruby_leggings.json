@@ -10,5 +10,8 @@
             "item": "enhancedgear:ruby"
         }
     },
-    "result": "enhancedgear:ruby_leggings"
+    "result": {
+        "item": "enhancedgear:ruby_leggings",
+        "count": 1
+    }
 }

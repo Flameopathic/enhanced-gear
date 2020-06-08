@@ -13,5 +13,8 @@
             "item": "minecraft:diamond_"
         }
     },
-    "result": "enhancedgear:obsidian_"
+    "result": {
+        "item": "enhancedgear:obsidian_chestplate",
+        "count": 1
+    }
 }

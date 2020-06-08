@@ -10,5 +10,8 @@
             "item": "enhancedgear:ruby"
         }
     },
-    "result": "enhancedgear:ruby_chestplate"
+    "result": {
+        "item": "enhancedgear:ruby_chestplate",
+        "count": 1
+    }
 }

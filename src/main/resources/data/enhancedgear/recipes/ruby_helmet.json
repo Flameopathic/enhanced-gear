@@ -9,5 +9,8 @@
             "item": "enhancedgear:ruby"
         }
     },
-    "result": "enhancedgear:ruby_helmet"
+    "result": {
+        "item": "enhancedgear:ruby_helmet",
+        "count": 1
+    }
 }

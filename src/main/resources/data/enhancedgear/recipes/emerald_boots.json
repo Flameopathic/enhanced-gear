@@ -9,5 +9,8 @@
             "item": "minecraft:emerald"
         }
     },
-    "result": "enhancedgear:emerald_boots"
+    "result": {
+        "item": "enhancedgear:emerald_boots",
+        "count": 1
+    }
 }
