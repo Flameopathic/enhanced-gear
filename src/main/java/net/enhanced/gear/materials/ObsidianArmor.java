@@ -20,7 +20,7 @@ public class ObsidianArmor implements ArmorMaterial {
 
     @Override
     public int getProtectionAmount(EquipmentSlot slot) {
-        return (int) (protection[slot.getEntitySlotId()] * (1 + (1/3)));
+        return (int) (protection[slot.getEntitySlotId()] * 1.4);
     }
 
     @Override
