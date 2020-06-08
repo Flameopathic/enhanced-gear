@@ -28,6 +28,15 @@
     "item.enhancedgear.ruby_hoe": "Ruby Hoe",
     "block.enhancedgear.ruby_ore": "Ruby Ore",
     "item.enhancedgear.ruby": "Ruby",
+    "item.enhancedgear.ruby.warning_0": "",
+    "item.enhancedgear.ruby.warning_1": "Ruby items are too powerful",
+    "item.enhancedgear.ruby.warning_2":  "for some enchantments,",
+    "item.enhancedgear.ruby.warning_3":  "try using a lower enchanting",
+    "item.enhancedgear.ruby.warning_4":  "level if they do not enchant.",
     "itemGroup.enhancedgear.group": "Enhanced Gear",
-    "block.enhancedgear.ruby_block": "Ruby Block"
+    "block.enhancedgear.ruby_block": "Ruby Block",
+    "item.enhancedgear.stone_helmet": "Stone Helmet",
+    "item.enhancedgear.stone_vest": "Stone Vest",
+    "item.enhancedgear.stone_leg_plating": "Stone Leg Plating",
+    "item.enhancedgear.stone_boots": "Stone Boots"
 }
