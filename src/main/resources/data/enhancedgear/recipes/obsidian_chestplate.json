@@ -1,16 +1,16 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "#e#",
         "# #",
-        "# #"
+        "#e#",
+        "###"
     ],
     "key": {
         "#": {
             "item": "minecraft:obsidian"
         },
         "e": {
-            "item": "minecraft:diamond_"
+            "item": "minecraft:diamond_chestplate"
         }
     },
     "result": {

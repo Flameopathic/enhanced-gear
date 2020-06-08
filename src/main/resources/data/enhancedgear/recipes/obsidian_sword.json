@@ -9,9 +9,6 @@
         "#": {
             "item": "minecraft:obsidian"
         },
-        "/": {
-            "item": "minecraft:stick"
-        },
         "e": {
             "item": "minecraft:diamond_sword"
         }
