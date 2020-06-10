@@ -15,12 +15,12 @@ public class EmeraldArmor implements ArmorMaterial {
 
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return baseDura[slot.getEntitySlotId()]*7;
+        return baseDura[slot.getEntitySlotId()]* 3;
     }
 
     @Override
     public int getProtectionAmount(EquipmentSlot slot) {
-        return (int) (protection[slot.getEntitySlotId()]* 2);
+        return (int) (protection[slot.getEntitySlotId()]);
     }
 
     @Override

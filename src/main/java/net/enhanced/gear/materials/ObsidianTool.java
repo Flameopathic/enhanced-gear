@@ -32,7 +32,7 @@ public class ObsidianTool implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.EMERALD);
+        return Ingredient.ofItems(Items.OBSIDIAN);
     }
     
 }

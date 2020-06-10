@@ -106,7 +106,7 @@ public class EnhancedGear implements ModInitializer {
     //Emerald tools
     public static final EmeraldTool EmeraldTool = new EmeraldTool();
     public static final EmeraldSword EMERALD_SWORD = new EmeraldSword(EmeraldTool, 3, -2.4f, new Item.Settings().group(GROUP));
-    public static final EmeraldPickaxe EMERALD_PICKAXE = new EmeraldPickaxe(EmeraldTool, 3, -2.8f, new Item.Settings().group(GROUP));
+    public static final EmeraldPickaxe EMERALD_PICKAXE = new EmeraldPickaxe(EmeraldTool, 1, -2.8f, new Item.Settings().group(GROUP));
     public static final EmeraldAxe EMERALD_AXE = new EmeraldAxe(EmeraldTool, 5, -3, new Item.Settings().group(GROUP));
     public static final EmeraldShovel EMERALD_SHOVEL = new EmeraldShovel(EmeraldTool, 1.5f, -3f, new Item.Settings().group(GROUP));
     public static final EmeraldHoe EMERALD_HOE = new EmeraldHoe(EmeraldTool, -2.8f, new Item.Settings().group(GROUP));
@@ -121,7 +121,7 @@ public class EnhancedGear implements ModInitializer {
     //Obsidian tools
     public static final ObsidianTool ObsidianTool = new ObsidianTool();
     public static final ObsidianSword OBSIDIAN_SWORD = new ObsidianSword(ObsidianTool, 3, -2.4f, new Item.Settings().group(GROUP));
-    public static final ObsidianPickaxe OBSIDIAN_PICKAXE = new ObsidianPickaxe(ObsidianTool, 3, -2.8f, new Item.Settings().group(GROUP));
+    public static final ObsidianPickaxe OBSIDIAN_PICKAXE = new ObsidianPickaxe(ObsidianTool, 1, -2.8f, new Item.Settings().group(GROUP));
     public static final ObsidianAxe OBSIDIAN_AXE = new ObsidianAxe(ObsidianTool, 5f, -3f, new Item.Settings().group(GROUP));
     public static final ObsidianShovel OBSIDIAN_SHOVEL = new ObsidianShovel(ObsidianTool, 1.5f, -3f, new Item.Settings().group(GROUP));
     public static final ObsidianHoe OBSIDIAN_HOE = new ObsidianHoe(ObsidianTool, -2.8f, new Item.Settings().group(GROUP));
@@ -136,7 +136,7 @@ public class EnhancedGear implements ModInitializer {
     //Ruby tools
     public static final RubyTool RubyTool = new RubyTool();
     public static final RubySword RUBY_SWORD = new RubySword(RubyTool, 3, -2.4f, new Item.Settings().group(GROUP));
-    public static final RubyPickaxe RUBY_PICKAXE = new RubyPickaxe(RubyTool, 3, -2.8f, new Item.Settings().group(GROUP));
+    public static final RubyPickaxe RUBY_PICKAXE = new RubyPickaxe(RubyTool, 1, -2.8f, new Item.Settings().group(GROUP));
     public static final RubyAxe RUBY_AXE = new RubyAxe(RubyTool, 5f, -3f, new Item.Settings().group(GROUP));
     public static final RubyShovel RUBY_SHOVEL = new RubyShovel(RubyTool, 1.5f, -3f, new Item.Settings().group(GROUP));
     public static final RubyHoe RUBY_HOE = new RubyHoe(RubyTool, -2.8f, new Item.Settings().group(GROUP));
