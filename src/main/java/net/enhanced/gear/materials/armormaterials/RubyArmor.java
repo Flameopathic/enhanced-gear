@@ -1,4 +1,4 @@
-package net.enhanced.gear.materials;
+package net.enhanced.gear.materials.armormaterials;
 
 import net.enhanced.gear.EnhancedGear;
 import net.minecraft.entity.EquipmentSlot;

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        "iR#",
+        " i "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:iron_block"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "enhancedgear:iron_drill",
+        "count": 1
+    }
+}

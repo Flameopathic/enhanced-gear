@@ -1,31 +1,30 @@
-package net.enhanced.gear.materials;
+package net.enhanced.gear.materials.armormaterials;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
-
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
-public class ObsidianArmor implements ArmorMaterial {
+public class StoneArmor implements ArmorMaterial {
 
     private static final int[] baseDura = new int[] {13, 15, 16, 11};
-    private static final double[] protection = new double[] { 1, 5, 6, 3 };
+    private static final int[] protection = new int[] { 1, 2, 3, 1 };
 
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return baseDura[slot.getEntitySlotId()]*37;
+        return baseDura[slot.getEntitySlotId()]*6;
     }
 
     @Override
     public int getProtectionAmount(EquipmentSlot slot) {
-        return (int) (protection[slot.getEntitySlotId()] * 1.4);
+        return protection[slot.getEntitySlotId()];
     }
 
     @Override
     public int getEnchantability() {
-        return 10;
+        return 15;
     }
 
     @Override
@@ -35,17 +34,17 @@ public class ObsidianArmor implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.OBSIDIAN);
+        return Ingredient.ofItems(Items.STONE);
     }
 
     @Override
     public String getName() {
-        return "obsidian";
+        return "stone";
     }
 
     @Override
     public float getToughness() {
-        return 2;
+        return 0;
     }
     
 }

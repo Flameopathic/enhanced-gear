@@ -1,13 +1,13 @@
-package net.enhanced.gear.materials;
+package net.enhanced.gear.materials.toolmaterials;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class ObsidianTool implements ToolMaterial {
+public class EmeraldTool implements ToolMaterial {
 
     @Override
     public int getDurability() {
-        return 2200;
+        return 32;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class ObsidianTool implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.OBSIDIAN);
+        return Ingredient.ofItems(Items.EMERALD);
     }
     
 }

@@ -7,21 +7,28 @@ import net.enhanced.gear.armor.StoneArmorBase;
 import net.enhanced.gear.blocks.RubyBlock;
 import net.enhanced.gear.blocks.RubyOre;
 import net.enhanced.gear.items.Ruby;
+import net.enhanced.gear.items.supertools.*;
 import net.enhanced.gear.items.tools.*;
-import net.enhanced.gear.materials.*;
+import net.enhanced.gear.materials.armormaterials.EmeraldArmor;
+import net.enhanced.gear.materials.armormaterials.ObsidianArmor;
+import net.enhanced.gear.materials.armormaterials.RubyArmor;
+import net.enhanced.gear.materials.armormaterials.StoneArmor;
+import net.enhanced.gear.materials.supertoolmaterials.IronSupertool;
+import net.enhanced.gear.materials.toolmaterials.EmeraldTool;
+import net.enhanced.gear.materials.toolmaterials.ObsidianTool;
+import net.enhanced.gear.materials.toolmaterials.RubyTool;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
@@ -36,7 +43,7 @@ public class EnhancedGear implements ModInitializer {
     //Something to lessen typing
     public static final String modid = "enhancedgear";
 
-    //Main group with all modded items in it
+    //Main item group with all modded items in it
     public static final ItemGroup GROUP = FabricItemGroupBuilder.create(new Identifier(modid, "group"))
             .icon(() -> new ItemStack(EnhancedGear.OBSIDIAN_CHESTPLATE))
             .appendItems(stacks ->
@@ -45,7 +52,7 @@ public class EnhancedGear implements ModInitializer {
                 Items in here are in the custom group.
                 Their order dictates their order in the group.
                 ItemStack.EMPTY will make an open slot
-                 */
+                */
 
                 //Emerald armor
                 stacks.add(new ItemStack(EnhancedGear.EMERALD_HELMET));
@@ -92,6 +99,13 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.STONE_LEG_PLATING));
                 stacks.add(new ItemStack(EnhancedGear.STONE_BOOTS));
 
+                //Super tools
+                stacks.add(new ItemStack(EnhancedGear.IRON_CRATER_CREATOR));
+                stacks.add(new ItemStack(EnhancedGear.IRON_DRILL));
+                stacks.add(new ItemStack(EnhancedGear.IRON_SUPERAXE));
+                stacks.add(new ItemStack(EnhancedGear.IRON_EXCAVATOR));
+                stacks.add(new ItemStack(EnhancedGear.IRON_PLOW));
+
                 //Other
                 stacks.add(new ItemStack(EnhancedGear.RUBY));
                 stacks.add(new ItemStack(EnhancedGear.RUBY_ORE));
@@ -137,7 +151,7 @@ public class EnhancedGear implements ModInitializer {
     public static final RubyTool RubyTool = new RubyTool();
     public static final RubySword RUBY_SWORD = new RubySword(RubyTool, 3, -2.4f, new Item.Settings().group(GROUP));
     public static final RubyPickaxe RUBY_PICKAXE = new RubyPickaxe(RubyTool, 1, -2.8f, new Item.Settings().group(GROUP));
-    public static final RubyAxe RUBY_AXE = new RubyAxe(RubyTool, 5f, -3f, new Item.Settings().group(GROUP));
+    public static final RubyAxe RUBY_AXE = new RubyAxe(RubyTool, 5, -3f, new Item.Settings().group(GROUP));
     public static final RubyShovel RUBY_SHOVEL = new RubyShovel(RubyTool, 1.5f, -3f, new Item.Settings().group(GROUP));
     public static final RubyHoe RUBY_HOE = new RubyHoe(RubyTool, -2.8f, new Item.Settings().group(GROUP));
 
@@ -159,6 +173,18 @@ public class EnhancedGear implements ModInitializer {
     public static final Ruby RUBY = new Ruby(new Item.Settings().group(GROUP));
     public static final Block RUBY_ORE = new RubyOre(FabricBlockSettings.of(Material.EARTH).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3, 3f));
     public static final Block RUBY_BLOCK = new RubyBlock(FabricBlockSettings.of(Material.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(3, 3f));
+
+    //Super tools
+    public static final IronSupertool IronSupertool = new IronSupertool();
+    public static final IronCraterCreator IRON_CRATER_CREATOR = new IronCraterCreator(IronSupertool, 4, -3.3f, new Item.Settings().group(GROUP));
+    public static final IronDrill IRON_DRILL = new IronDrill(IronSupertool, 4, -3.3f, new Item.Settings().group(GROUP));
+    public static final IronSuperaxe IRON_SUPERAXE = new IronSuperaxe(IronSupertool, 8, -3.5f, new Item.Settings().group(GROUP));
+    public static final IronExcavator IRON_EXCAVATOR = new IronExcavator(IronSupertool, 4.5f, -3.5f, new Item.Settings().group(GROUP));
+    public static final IronPlow IRON_PLOW = new IronPlow(IronSupertool, 4, new Item.Settings().group(GROUP));
+
+    //Tags
+    public static final Tag<Block> STONEY = TagRegistry.block(new Identifier(modid, "stoney"));
+    public static final Tag<Block> ORES = TagRegistry.block(new Identifier(modid, "ores"));
     @Override
     public void onInitialize() {
 
@@ -217,6 +243,13 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "stone_boots"), STONE_BOOTS);
 
         Registry.register(Registry.ITEM, new Identifier(modid, "ruby"), RUBY);
+
+        //Super tools
+        Registry.register(Registry.ITEM, new Identifier(modid, "iron_superaxe"), IRON_SUPERAXE);
+        Registry.register(Registry.ITEM, new Identifier(modid, "iron_crater_creator"), IRON_CRATER_CREATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "iron_drill"), IRON_DRILL);
+        Registry.register(Registry.ITEM, new Identifier(modid, "iron_excavator"), IRON_EXCAVATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "iron_plow"), IRON_PLOW);
 
         //Both Block and BlockItem must be registered for it to be place-able and in the inventory
         Registry.register(Registry.BLOCK, new Identifier(modid, "ruby_ore"), RUBY_ORE);

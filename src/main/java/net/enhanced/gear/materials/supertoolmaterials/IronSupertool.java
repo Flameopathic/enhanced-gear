@@ -1,39 +1,37 @@
-package net.enhanced.gear.materials;
+package net.enhanced.gear.materials.supertoolmaterials;
 
-import net.enhanced.gear.EnhancedGear;
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class RubyTool implements ToolMaterial {
-
+public class IronSupertool implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 1000;
+        return 250;
     }
 
     @Override
     public float getMiningSpeed() {
-        return 8.0f;
+        return 1f;
     }
 
     @Override
     public float getAttackDamage() {
-        return 3.0f;
+        return 1;
     }
 
     @Override
     public int getMiningLevel() {
-        return 3;
+        return 2;
     }
 
     @Override
     public int getEnchantability() {
-        return 200;
+        return 14;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(EnhancedGear.RUBY);
+        return Ingredient.ofItems(Items.IRON_BLOCK);
     }
-    
 }
