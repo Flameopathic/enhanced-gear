@@ -1,4 +1,4 @@
-package net.enhanced.gear.items.supertools;
+package net.enhanced.gear.items.supertools.iron;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EquipmentSlot;

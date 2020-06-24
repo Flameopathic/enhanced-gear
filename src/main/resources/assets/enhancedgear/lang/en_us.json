@@ -4,44 +4,62 @@
     "item.enhancedgear.emerald_pickaxe": "Emerald Pickaxe",
     "item.enhancedgear.emerald_shovel": "Emerald Shovel",
     "item.enhancedgear.emerald_hoe": "Emerald Hoe",
+
+    "item.enhancedgear.emerald_helmet": "Emerald Helmet",
+    "item.enhancedgear.emerald_chestplate": "Emerald Chestplate",
+    "item.enhancedgear.emerald_leggings": "Emerald Leggings",
+    "item.enhancedgear.emerald_boots": "Emerald Boots",
+
     "item.enhancedgear.obsidian_axe": "Obsidian Axe",
     "item.enhancedgear.obsidian_sword": "Obsidian Sword",
     "item.enhancedgear.obsidian_pickaxe": "Obsidian Pickaxe",
     "item.enhancedgear.obsidian_shovel": "Obsidian Shovel",
     "item.enhancedgear.obsidian_hoe": "Obsidian Hoe",
-    "item.enhancedgear.emerald_helmet": "Emerald Helmet",
-    "item.enhancedgear.emerald_chestplate": "Emerald Chestplate",
-    "item.enhancedgear.emerald_leggings": "Emerald Leggings",
-    "item.enhancedgear.emerald_boots": "Emerald Boots",
+
     "item.enhancedgear.obsidian_helmet": "Obsidian Helmet",
     "item.enhancedgear.obsidian_chestplate": "Obsidian Chestplate",
     "item.enhancedgear.obsidian_leggings": "Obsidian Leggings",
     "item.enhancedgear.obsidian_boots": "Obsidian Boots",
+
     "item.enhancedgear.ruby_helmet": "Ruby Helmet",
     "item.enhancedgear.ruby_chestplate": "Ruby Chestplate",
     "item.enhancedgear.ruby_leggings": "Ruby Leggings",
     "item.enhancedgear.ruby_boots": "Ruby Boots",
+
     "item.enhancedgear.ruby_axe": "Ruby Axe",
     "item.enhancedgear.ruby_sword": "Ruby Sword",
     "item.enhancedgear.ruby_pickaxe": "Ruby Pickaxe",
     "item.enhancedgear.ruby_shovel": "Ruby Shovel",
     "item.enhancedgear.ruby_hoe": "Ruby Hoe",
+
     "block.enhancedgear.ruby_ore": "Ruby Ore",
+    "block.enhancedgear.ruby_block": "Ruby Block",
+
     "item.enhancedgear.ruby": "Ruby",
     "item.enhancedgear.ruby.newline": "",
     "item.enhancedgear.ruby.warning_1": "Ruby items are too powerful",
     "item.enhancedgear.ruby.warning_2":  "for some enchantments,",
     "item.enhancedgear.ruby.warning_3":  "try using a lower enchanting",
     "item.enhancedgear.ruby.warning_4":  "level if they do not enchant.",
+
     "itemGroup.enhancedgear.group": "Enhanced Gear",
-    "block.enhancedgear.ruby_block": "Ruby Block",
-    "item.enhancedgear.stone_helmet": "Stone Helmet",
-    "item.enhancedgear.stone_vest": "Stone Vest",
-    "item.enhancedgear.stone_leg_plating": "Stone Leg Plating",
-    "item.enhancedgear.stone_boots": "Stone Boots",
+    "itemGroup.enhancedgear.supertool_group": "Enhanced Supertools",
+
     "item.enhancedgear.iron_crater_creator": "Iron Crater Creator",
     "item.enhancedgear.iron_drill": "Iron Drill",
     "item.enhancedgear.iron_superaxe": "Iron Superaxe",
     "item.enhancedgear.iron_excavator": "Iron Excavator",
-    "item.enhancedgear.iron_plow": "Iron Plow"
+    "item.enhancedgear.iron_plow": "Iron Plow",
+
+    "item.enhancedgear.gold_crater_creator": "Gold Crater Creator",
+    "item.enhancedgear.gold_drill": "Gold Drill",
+    "item.enhancedgear.gold_superaxe": "Gold Superaxe",
+    "item.enhancedgear.gold_excavator": "Gold Excavator",
+    "item.enhancedgear.gold_plow": "Gold Plow",
+
+    "item.enhancedgear.diamond_crater_creator": "Diamond Crater Creator",
+    "item.enhancedgear.diamond_drill": "Diamond Drill",
+    "item.enhancedgear.diamond_superaxe": "Diamond Superaxe",
+    "item.enhancedgear.diamond_excavator": "Diamond Excavator",
+    "item.enhancedgear.diamond_plow": "Diamond Plow"
 }

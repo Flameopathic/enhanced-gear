@@ -1,18 +1,21 @@
-package net.enhanced.gear.items.supertools;
+package net.enhanced.gear.items.supertools.diamond;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class IronPlow extends HoeItem {
+public class DiamondPlow extends HoeItem {
 
-    public IronPlow(ToolMaterial material, float attackSpeed, Settings settings) {
+    public DiamondPlow(ToolMaterial material, float attackSpeed, Settings settings) {
         super(material, attackSpeed, settings);
     }
 

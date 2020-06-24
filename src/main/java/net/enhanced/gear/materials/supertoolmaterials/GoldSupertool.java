@@ -4,7 +4,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class IronSupertool implements ToolMaterial {
+public class GoldSupertool implements ToolMaterial {
     @Override
     public int getDurability() {
         return 250;
@@ -22,16 +22,16 @@ public class IronSupertool implements ToolMaterial {
 
     @Override
     public int getMiningLevel() {
-        return 2;
+        return 1;
     }
 
     @Override
     public int getEnchantability() {
-        return 14;
+        return 30;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.IRON_BLOCK);
+        return Ingredient.ofItems(Items.GOLD_BLOCK);
     }
 }

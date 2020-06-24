@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        "iR#",
+        " i "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:diamond_block"
+        },
+        "i": {
+            "item": "minecraft:diamond_ingot"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "enhancedgear:diamond_drill",
+        "count": 1
+    }
+}

@@ -1,4 +1,4 @@
-package net.enhanced.gear.items.supertools;
+package net.enhanced.gear.items.supertools.diamond;
 
 import net.enhanced.gear.EnhancedGear;
 import net.minecraft.block.Block;
@@ -11,9 +11,9 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class IronDrill extends PickaxeItem {
+public class DiamondDrill extends PickaxeItem {
 
-    public IronDrill(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+    public DiamondDrill(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
 

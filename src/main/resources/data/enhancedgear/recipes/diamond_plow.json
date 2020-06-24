@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " iI",
+        "i /",
+        "  /"
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:diamond_ingot"
+        },
+        "I": {
+            "item": "minecraft:diamond_block"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "enhancedgear:diamond_plow",
+        "count": 1
+    }
+}
