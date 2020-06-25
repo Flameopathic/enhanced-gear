@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 public class DiamondSupertool implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 250;
+        return 1561;
     }
 
     @Override
