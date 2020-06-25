@@ -28,13 +28,19 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.Decorator;
@@ -338,6 +344,66 @@ public class EnhancedGear implements ModInitializer {
                                     0,
                                     15  //maximum y coordinate
                             ))));
+        }
+    }
+    //Stuff that makes supertools work
+    public static void veinMiner(BlockPos pos, Block block, Tag <Block> canMine, World world, ItemStack stack, LivingEntity miner) {
+        for (int x = -1; x < 2; x++) {
+            for (int y = -1; y < 2; y++) {
+                for (int z = -1; z < 2; z++) {
+                    BlockPos current = pos.add(x, y, z);
+                    BlockState state = world.getBlockState(current);
+                    Block currentBlock = state.getBlock();
+                    if (canMine.contains(block)) {
+                        if (block.equals(currentBlock)) {
+                            if (stack.getDamage() < stack.getMaxDamage()) {
+                                world.breakBlock(current, true);
+                                stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+                                veinMiner(current, block, canMine, world, stack, miner);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public static void cubeMiner(BlockPos pos, Tag<Block> canMine, World world, int diameter, ItemStack stack, LivingEntity miner) {
+        int min = (diameter / 2) * -1;
+        int max = (min * -1) + 1;
+        for (int x = min; x < max; x++) {
+            for (int y = min; y < max; y++) {
+                for (int z = min; z < max; z++) {
+                    BlockPos current = pos.add(x, y, z);
+                    BlockState state = world.getBlockState(current);
+                    Block block = state.getBlock();
+                    if (canMine.contains(block)) {
+                        if (stack.getDamage() < stack.getMaxDamage()) {
+                            world.breakBlock(current, true);
+                            stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public static void plower(BlockPos pos, World world, int diameter, ItemStack stack, LivingEntity miner) {
+        int min = (diameter / 2) * -1;
+        int max = (min * -1) + 1;
+        for (int x = min; x < max; x++) {
+            for (int y = min; y < max; y++) {
+                for (int z = min; z < max; z++) {
+                    BlockPos current = pos.add(x, y, z);
+                    BlockState state = world.getBlockState(current);
+                    Block block = state.getBlock();
+                    if ((block.equals(Blocks.DIRT) && (world.getBlockState(current.up()).getBlock().equals(Blocks.AIR) || world.getBlockState(current.up()).getBlock().equals(Blocks.CAVE_AIR)))
+                            || (block.equals(Blocks.GRASS_BLOCK) && (world.getBlockState(current.up()).getBlock().equals(Blocks.AIR) || world.getBlockState(current.up()).getBlock().equals(Blocks.CAVE_AIR)))) {
+                        if (stack.getDamage() < stack.getMaxDamage()) {
+                            world.setBlockState(current, Blocks.FARMLAND.getDefaultState());
+                            stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+                        }
+                    }
+                }
+            }
         }
     }
 }
