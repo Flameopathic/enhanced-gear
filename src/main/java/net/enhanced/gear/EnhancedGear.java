@@ -114,8 +114,6 @@ public class EnhancedGear implements ModInitializer {
             .icon(() -> new ItemStack(EnhancedGear.IRON_CRATER_CREATOR))
             .appendItems(stacks ->
             {
-                //Supertools
-
                 //Iron
                 stacks.add(new ItemStack(EnhancedGear.IRON_CRATER_CREATOR));
                 stacks.add(new ItemStack(EnhancedGear.IRON_DRILL));
