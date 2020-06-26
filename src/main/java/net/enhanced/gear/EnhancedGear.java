@@ -49,6 +49,11 @@ import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.BiFunction;
+
 public class EnhancedGear implements ModInitializer {
 
     //Something to lessen typing
@@ -235,7 +240,7 @@ public class EnhancedGear implements ModInitializer {
     public static final GoldenSuperaxe GOLDEN_SUPERAXE = new GoldenSuperaxe(GoldenSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final GoldenExcavator GOLDEN_EXCAVATOR = new GoldenExcavator(GoldenSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final GoldenPlow GOLDEN_PLOW = new GoldenPlow(GoldenSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
-    
+
     //Diamond
     public static final DiamondSupertool DiamondSupertool = new DiamondSupertool();
     public static final DiamondCraterCreator DIAMOND_CRATER_CREATOR = new DiamondCraterCreator(DiamondSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
@@ -263,6 +268,7 @@ public class EnhancedGear implements ModInitializer {
     //Tags
     public static final Tag<Block> STONEY = TagRegistry.block(new Identifier(modid, "stoney"));
     public static final Tag<Block> ORES = TagRegistry.block(new Identifier(modid, "ores"));
+
     @Override
     public void onInitialize() {
 
@@ -319,7 +325,7 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "stone_vest"), STONE_VEST);
         Registry.register(Registry.ITEM, new Identifier(modid, "stone_leg_plating"), STONE_LEG_PLATING);
         Registry.register(Registry.ITEM, new Identifier(modid, "stone_boots"), STONE_BOOTS);
-        
+
         Registry.register(Registry.ITEM, new Identifier(modid, "ruby"), RUBY);
 
         //Both Block and BlockItem must be registered for it to be place-able and in the inventory
@@ -369,6 +375,7 @@ public class EnhancedGear implements ModInitializer {
         Registry.BIOME.forEach(this::handleBiome);
         RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
     }
+
     //Generates blocks in whatever biome is put into it. Only does ruby_ore right now
     public void handleBiome(Biome biome) {
         if (biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
@@ -388,8 +395,9 @@ public class EnhancedGear implements ModInitializer {
                             ))));
         }
     }
+
     //Stuff that makes supertools work
-    public static void veinMiner(BlockPos pos, Block block, Tag <Block> canMine, World world, ItemStack stack, LivingEntity miner) {
+    public static void veinMiner(BlockPos pos, Block block, Tag<Block> canMine, World world, ItemStack stack, LivingEntity miner) {
         for (int x = -1; x < 2; x++) {
             for (int y = -1; y < 2; y++) {
                 for (int z = -1; z < 2; z++) {
@@ -409,6 +417,38 @@ public class EnhancedGear implements ModInitializer {
             }
         }
     }
+
+    public static BiFunction<BlockState, ItemStack, Boolean> checkWithTag(Tag<Block> tag) {
+        return (blockState, itemStack) -> tag.contains(blockState.getBlock());
+    }
+    public static BiFunction<BlockState, ItemStack, Boolean> checkWithToolType(Item toolType) {
+        return (blockState, itemStack) -> toolType.getMiningSpeed(itemStack, blockState) > 1;
+    }
+    public static BiFunction<BlockState, ItemStack, Boolean> checkWithBlockList(List<Block> blocks) {
+        return (blockState, itemStack) -> blocks.contains(blockState.getBlock());
+    }
+
+//    public static BiFunction<BlockState, ItemStack, Boolean> example = checkWithBlockList(Arrays.asList(/*Grass, Podzol, ...*/));
+
+    public static void cubeMiner(BlockPos pos, BiFunction<BlockState, ItemStack, Boolean> canMine, World world, int diameter, ItemStack stack, LivingEntity miner) {
+        int min = (diameter / 2) * -1;
+        int max = (min * -1) + 1;
+        for (int x = min; x < max; x++) {
+            for (int y = min; y < max; y++) {
+                for (int z = min; z < max; z++) {
+                    BlockPos current = pos.add(x, y, z);
+                    BlockState state = world.getBlockState(current);
+                    if (canMine.apply(state, stack)) {
+                        if (stack.getDamage() < stack.getMaxDamage()) {
+                            world.breakBlock(current, true);
+                            stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public static void cubeMiner(BlockPos pos, Tag<Block> canMine, World world, int diameter, ItemStack stack, LivingEntity miner) {
         int min = (diameter / 2) * -1;
         int max = (min * -1) + 1;
@@ -428,6 +468,7 @@ public class EnhancedGear implements ModInitializer {
             }
         }
     }
+
     public static void cubeMiner(BlockPos pos, Item toolType, World world, int diameter, ItemStack stack, LivingEntity miner) {
         int min = (diameter / 2) * -1;
         int max = (min * -1) + 1;
@@ -446,6 +487,7 @@ public class EnhancedGear implements ModInitializer {
             }
         }
     }
+
     public static void plower(BlockPos pos, World world, int diameter, ItemStack stack, LivingEntity miner) {
         int min = (diameter / 2) * -1;
         int max = (min * -1) + 1;
