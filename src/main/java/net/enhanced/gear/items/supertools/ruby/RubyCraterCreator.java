@@ -17,6 +17,10 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
+import static net.enhanced.gear.Util.checkWithTag;
+import static net.enhanced.gear.Util.cubeMiner;
+
+
 public class RubyCraterCreator extends PickaxeItem {
     public RubyCraterCreator(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
@@ -31,7 +35,7 @@ public class RubyCraterCreator extends PickaxeItem {
 
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-        EnhancedGear.cubeMiner(pos, EnhancedGear.STONEY, world, 3, stack, miner);
+        cubeMiner(pos, checkWithTag(EnhancedGear.STONEY), world, 3, stack, miner);
         ((ServerWorld) world).spawnParticles(ParticleTypes.EXPLOSION, pos.getX(), pos.getY(), pos.getZ(), 1, 1.0, 1.0, 1.0, 1.0);
         world.playSound(null, pos, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 10, 1);
         return true;

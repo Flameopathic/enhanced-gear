@@ -1,6 +1,5 @@
 package net.enhanced.gear.items.supertools.emerald;
 
-import net.enhanced.gear.EnhancedGear;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
@@ -11,6 +10,9 @@ import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import static net.enhanced.gear.Util.checkWithTag;
+import static net.enhanced.gear.Util.veinMiner;
+
 public class EmeraldSuperaxe extends AxeItem {
 
     public EmeraldSuperaxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
@@ -20,7 +22,7 @@ public class EmeraldSuperaxe extends AxeItem {
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         Block block = state.getBlock();
-        EnhancedGear.veinMiner(pos, block, BlockTags.LOGS, world, stack, miner);
+        veinMiner(pos, block, checkWithTag(BlockTags.LOGS), world, stack, miner);
         return true;
     }
 }

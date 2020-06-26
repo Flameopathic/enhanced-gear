@@ -10,6 +10,9 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import static net.enhanced.gear.Util.checkWithTag;
+import static net.enhanced.gear.Util.veinMiner;
+
 public class IronDrill extends PickaxeItem {
 
     public IronDrill(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
@@ -19,7 +22,7 @@ public class IronDrill extends PickaxeItem {
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         Block block = state.getBlock();
-        EnhancedGear.veinMiner(pos, block, EnhancedGear.ORES, world, stack, miner);
+        veinMiner(pos, block, checkWithTag(EnhancedGear.ORES), world, stack, miner);
         return true;
     }
 }

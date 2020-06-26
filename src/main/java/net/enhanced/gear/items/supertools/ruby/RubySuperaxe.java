@@ -1,6 +1,5 @@
 package net.enhanced.gear.items.supertools.ruby;
 
-import net.enhanced.gear.EnhancedGear;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -14,6 +13,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.Random;
+
+import static net.enhanced.gear.Util.checkWithTag;
+import static net.enhanced.gear.Util.veinMiner;
 
 public class RubySuperaxe extends AxeItem {
 
@@ -31,7 +33,7 @@ public class RubySuperaxe extends AxeItem {
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         Block block = state.getBlock();
-        EnhancedGear.veinMiner(pos, block, BlockTags.LOGS, world, stack, miner);
+        veinMiner(pos, block, checkWithTag(BlockTags.LOGS), world, stack, miner);
         return true;
     }
 }

@@ -59,6 +59,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiFunction;
 
+import static net.enhanced.gear.Util.handleBiome;
+
 public class EnhancedGear implements ModInitializer {
 
     //Something to lessen typing
@@ -399,140 +401,7 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "obsidian_plow"), OBSIDIAN_PLOW);
 
         //Cycles through all biomes, then checks for new ones. See handleBiome to see what they do for each biome
-        Registry.BIOME.forEach(this::handleBiome);
+        Registry.BIOME.forEach(Util::handleBiome);
         RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
-    }
-
-    //Generates blocks in whatever biome is put into it. Only does ruby_ore right now
-    public void handleBiome(Biome biome) {
-        if (biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
-            biome.addFeature(
-                    GenerationStep.Feature.UNDERGROUND_ORES,
-                    Feature.ORE.configure(
-                            new OreFeatureConfig(
-                                    OreFeatureConfig.Target.NATURAL_STONE,
-                                    RUBY_ORE.getDefaultState(),
-                                    5       //maximum vein size
-                            )).createDecoratedFeature(
-                            Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
-                                    3,     //maximum number per chunk
-                                    0,
-                                    0,
-                                    15  //maximum y coordinate
-                            ))));
-        }
-    }
-
-    //Stuff that makes supertools work
-    public static void veinMiner(BlockPos pos, Block block, Tag<Block> canMine, World world, ItemStack stack, LivingEntity miner) {
-        for (int x = -1; x < 2; x++) {
-            for (int y = -1; y < 2; y++) {
-                for (int z = -1; z < 2; z++) {
-                    BlockPos current = pos.add(x, y, z);
-                    BlockState state = world.getBlockState(current);
-                    Block currentBlock = state.getBlock();
-                    if (canMine.contains(block)) {
-                        if (block.equals(currentBlock)) {
-                            if (stack.getDamage() < stack.getMaxDamage()) {
-                                world.breakBlock(current, true);
-                                stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-                                veinMiner(current, block, canMine, world, stack, miner);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public static BiFunction<BlockState, ItemStack, Boolean> checkWithTag(Tag<Block> tag) {
-        return (blockState, itemStack) -> tag.contains(blockState.getBlock());
-    }
-    public static BiFunction<BlockState, ItemStack, Boolean> checkWithToolType(Item toolType) {
-        return (blockState, itemStack) -> toolType.getMiningSpeed(itemStack, blockState) > 1;
-    }
-    public static BiFunction<BlockState, ItemStack, Boolean> checkWithBlockList(List<Block> blocks) {
-        return (blockState, itemStack) -> blocks.contains(blockState.getBlock());
-    }
-
-//    public static BiFunction<BlockState, ItemStack, Boolean> example = checkWithBlockList(Arrays.asList(/*Grass, Podzol, ...*/));
-
-    public static void cubeMiner(BlockPos pos, BiFunction<BlockState, ItemStack, Boolean> canMine, World world, int diameter, ItemStack stack, LivingEntity miner) {
-        int min = (diameter / 2) * -1;
-        int max = (min * -1) + 1;
-        for (int x = min; x < max; x++) {
-            for (int y = min; y < max; y++) {
-                for (int z = min; z < max; z++) {
-                    BlockPos current = pos.add(x, y, z);
-                    BlockState state = world.getBlockState(current);
-                    if (canMine.apply(state, stack)) {
-                        if (stack.getDamage() < stack.getMaxDamage()) {
-                            world.breakBlock(current, true);
-                            stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public static void cubeMiner(BlockPos pos, Tag<Block> canMine, World world, int diameter, ItemStack stack, LivingEntity miner) {
-        int min = (diameter / 2) * -1;
-        int max = (min * -1) + 1;
-        for (int x = min; x < max; x++) {
-            for (int y = min; y < max; y++) {
-                for (int z = min; z < max; z++) {
-                    BlockPos current = pos.add(x, y, z);
-                    BlockState state = world.getBlockState(current);
-                    Block block = state.getBlock();
-                    if (canMine.contains(block)) {
-                        if (stack.getDamage() < stack.getMaxDamage()) {
-                            world.breakBlock(current, true);
-                            stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public static void cubeMiner(BlockPos pos, Item toolType, World world, int diameter, ItemStack stack, LivingEntity miner) {
-        int min = (diameter / 2) * -1;
-        int max = (min * -1) + 1;
-        for (int x = min; x < max; x++) {
-            for (int y = min; y < max; y++) {
-                for (int z = min; z < max; z++) {
-                    BlockPos current = pos.add(x, y, z);
-                    BlockState state = world.getBlockState(current);
-                    if (toolType.getMiningSpeed(stack, state) > 1) {
-                        if (stack.getDamage() < stack.getMaxDamage()) {
-                            world.breakBlock(current, true);
-                            stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public static void plower(BlockPos pos, World world, int diameter, ItemStack stack, LivingEntity miner) {
-        int min = (diameter / 2) * -1;
-        int max = (min * -1) + 1;
-        for (int x = min; x < max; x++) {
-            for (int y = min; y < max; y++) {
-                for (int z = min; z < max; z++) {
-                    BlockPos current = pos.add(x, y, z);
-                    BlockState state = world.getBlockState(current);
-                    Block block = state.getBlock();
-                    if ((block.equals(Blocks.DIRT) && (world.getBlockState(current.up()).getBlock().equals(Blocks.AIR) || world.getBlockState(current.up()).getBlock().equals(Blocks.CAVE_AIR)))
-                            || (block.equals(Blocks.GRASS_BLOCK) && (world.getBlockState(current.up()).getBlock().equals(Blocks.AIR) || world.getBlockState(current.up()).getBlock().equals(Blocks.CAVE_AIR)))) {
-                        if (stack.getDamage() < stack.getMaxDamage()) {
-                            world.setBlockState(current, Blocks.FARMLAND.getDefaultState());
-                            stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-                        }
-                    }
-                }
-            }
-        }
     }
 }

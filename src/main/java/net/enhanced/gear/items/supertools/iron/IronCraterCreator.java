@@ -13,8 +13,8 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import static net.enhanced.gear.EnhancedGear.checkWithTag;
-import static net.enhanced.gear.EnhancedGear.cubeMiner;
+import static net.enhanced.gear.Util.checkWithTag;
+import static net.enhanced.gear.Util.cubeMiner;
 
 public class IronCraterCreator extends PickaxeItem {
     public IronCraterCreator(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {

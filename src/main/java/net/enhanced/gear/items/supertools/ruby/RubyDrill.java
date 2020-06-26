@@ -14,6 +14,9 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
+import static net.enhanced.gear.Util.checkWithTag;
+import static net.enhanced.gear.Util.veinMiner;
+
 public class RubyDrill extends PickaxeItem {
 
     public RubyDrill(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
@@ -30,7 +33,7 @@ public class RubyDrill extends PickaxeItem {
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         Block block = state.getBlock();
-        EnhancedGear.veinMiner(pos, block, EnhancedGear.ORES, world, stack, miner);
+        veinMiner(pos, block, checkWithTag(EnhancedGear.ORES), world, stack, miner);
         return true;
     }
 }
