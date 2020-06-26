@@ -384,6 +384,24 @@ public class EnhancedGear implements ModInitializer {
             }
         }
     }
+    public static void cubeMiner(BlockPos pos, Item toolType, World world, int diameter, ItemStack stack, LivingEntity miner) {
+        int min = (diameter / 2) * -1;
+        int max = (min * -1) + 1;
+        for (int x = min; x < max; x++) {
+            for (int y = min; y < max; y++) {
+                for (int z = min; z < max; z++) {
+                    BlockPos current = pos.add(x, y, z);
+                    BlockState state = world.getBlockState(current);
+                    if (toolType.getMiningSpeed(stack, state) > 1) {
+                        if (stack.getDamage() < stack.getMaxDamage()) {
+                            world.breakBlock(current, true);
+                            stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+                        }
+                    }
+                }
+            }
+        }
+    }
     public static void plower(BlockPos pos, World world, int diameter, ItemStack stack, LivingEntity miner) {
         int min = (diameter / 2) * -1;
         int max = (min * -1) + 1;
