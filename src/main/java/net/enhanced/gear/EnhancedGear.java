@@ -128,13 +128,6 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.IRON_EXCAVATOR));
                 stacks.add(new ItemStack(EnhancedGear.IRON_PLOW));
 
-                //Gold
-                stacks.add(new ItemStack(EnhancedGear.GOLDEN_CRATER_CREATOR));
-                stacks.add(new ItemStack(EnhancedGear.GOLDEN_DRILL));
-                stacks.add(new ItemStack(EnhancedGear.GOLDEN_SUPERAXE));
-                stacks.add(new ItemStack(EnhancedGear.GOLDEN_EXCAVATOR));
-                stacks.add(new ItemStack(EnhancedGear.GOLDEN_PLOW));
-
                 //Diamond
                 stacks.add(new ItemStack(EnhancedGear.DIAMOND_CRATER_CREATOR));
                 stacks.add(new ItemStack(EnhancedGear.DIAMOND_DRILL));
@@ -142,6 +135,13 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.DIAMOND_EXCAVATOR));
                 stacks.add(new ItemStack(EnhancedGear.DIAMOND_PLOW));
 
+                //Gold
+                stacks.add(new ItemStack(EnhancedGear.GOLDEN_CRATER_CREATOR));
+                stacks.add(new ItemStack(EnhancedGear.GOLDEN_DRILL));
+                stacks.add(new ItemStack(EnhancedGear.GOLDEN_SUPERAXE));
+                stacks.add(new ItemStack(EnhancedGear.GOLDEN_EXCAVATOR));
+                stacks.add(new ItemStack(EnhancedGear.GOLDEN_PLOW));
+                
                 //Emerald
                 stacks.add(new ItemStack(EnhancedGear.EMERALD_CRATER_CREATOR));
                 stacks.add(new ItemStack(EnhancedGear.EMERALD_DRILL));
@@ -437,6 +437,25 @@ public class EnhancedGear implements ModInitializer {
                     BlockPos current = pos.add(x, y, z);
                     BlockState state = world.getBlockState(current);
                     if (toolType.getMiningSpeed(stack, state) > 1) {
+                        if (stack.getDamage() < stack.getMaxDamage()) {
+                            world.breakBlock(current, true);
+                            stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public static void cubeMiner(BlockPos pos, Block canMine, World world, int diameter, ItemStack stack, LivingEntity miner) {
+        int min = (diameter / 2) * -1;
+        int max = (min * -1) + 1;
+        for (int x = min; x < max; x++) {
+            for (int y = min; y < max; y++) {
+                for (int z = min; z < max; z++) {
+                    BlockPos current = pos.add(x, y, z);
+                    BlockState state = world.getBlockState(current);
+                    Block block = state.getBlock();
+                    if (canMine.equals(block)) {
                         if (stack.getDamage() < stack.getMaxDamage()) {
                             world.breakBlock(current, true);
                             stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
