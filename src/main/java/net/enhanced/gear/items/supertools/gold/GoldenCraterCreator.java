@@ -22,7 +22,7 @@ public class GoldenCraterCreator extends PickaxeItem {
 
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-        EnhancedGear.cubeMiner(pos, EnhancedGear.STONEY, world, 5, stack, miner);
+        EnhancedGear.cubeMiner(pos, EnhancedGear.STONEY, world, 3, stack, miner);
         ((ServerWorld) world).spawnParticles(ParticleTypes.EXPLOSION, pos.getX(), pos.getY(), pos.getZ(), 1, 1.0, 1.0, 1.0, 1.0);
         world.playSound(null, pos, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 10, 1);
         return true;
