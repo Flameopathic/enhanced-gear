@@ -1,11 +1,9 @@
-package net.enhanced.gear.items.supertools.gold;
+package net.enhanced.gear.items.supertools.ruby;
 
 import net.enhanced.gear.EnhancedGear;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
@@ -14,10 +12,19 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class GoldPlow extends HoeItem {
+import java.util.Random;
 
-    public GoldPlow(ToolMaterial material, float attackSpeed, Settings settings) {
+public class RubyPlow extends HoeItem {
+
+    public RubyPlow(ToolMaterial material, float attackSpeed, Settings settings) {
         super(material, attackSpeed, settings);
+    }
+
+    @Override
+    public void onCraft(ItemStack stack, World world, PlayerEntity player) {
+        super.onCraft(stack, world, player);
+        Random random = new Random();
+        EnchantmentHelper.enchant(random, stack, 15, false);
     }
 
     @Override

@@ -72,5 +72,11 @@
     "item.enhancedgear.emerald_drill": "Emerald Drill",
     "item.enhancedgear.emerald_superaxe": "Emerald Superaxe",
     "item.enhancedgear.emerald_excavator": "Emerald Excavator",
-    "item.enhancedgear.emerald_plow": "Emerald Plow"
+    "item.enhancedgear.emerald_plow": "Emerald Plow",
+
+    "item.enhancedgear.ruby_crater_creator": "Ruby Crater Creator",
+    "item.enhancedgear.ruby_drill": "Ruby Drill",
+    "item.enhancedgear.ruby_superaxe": "Ruby Superaxe",
+    "item.enhancedgear.ruby_excavator": "Ruby Excavator",
+    "item.enhancedgear.ruby_plow": "Ruby Plow"
 }

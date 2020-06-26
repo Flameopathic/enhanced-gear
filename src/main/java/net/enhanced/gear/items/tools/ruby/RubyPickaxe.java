@@ -1,17 +1,17 @@
-package net.enhanced.gear.items.tools;
+package net.enhanced.gear.items.tools.ruby;
 
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class RubyHoe extends HoeItem {
-    public RubyHoe(ToolMaterial material, float attackSpeed, Settings settings) {
-        super(material, attackSpeed, settings);
+public class RubyPickaxe extends PickaxeItem {
+    public RubyPickaxe(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
     }
 
     @Override

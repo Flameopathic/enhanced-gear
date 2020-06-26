@@ -1,4 +1,4 @@
-package net.enhanced.gear.items.tools;
+package net.enhanced.gear.items.tools.obsidian;
 
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.ToolMaterial;

@@ -4,7 +4,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class GoldSupertool implements ToolMaterial {
+public class GoldenSupertool implements ToolMaterial {
     @Override
     public int getDurability() {
         return 250;

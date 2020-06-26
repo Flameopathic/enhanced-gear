@@ -1,4 +1,4 @@
-package net.enhanced.gear.items.tools;
+package net.enhanced.gear.items.tools.ruby;
 
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;

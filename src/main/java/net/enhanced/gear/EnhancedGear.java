@@ -11,15 +11,15 @@ import net.enhanced.gear.items.supertools.diamond.*;
 import net.enhanced.gear.items.supertools.emerald.*;
 import net.enhanced.gear.items.supertools.gold.*;
 import net.enhanced.gear.items.supertools.iron.*;
-import net.enhanced.gear.items.tools.*;
+import net.enhanced.gear.items.supertools.ruby.*;
+import net.enhanced.gear.items.tools.emerald.*;
+import net.enhanced.gear.items.tools.obsidian.*;
+import net.enhanced.gear.items.tools.ruby.*;
 import net.enhanced.gear.materials.armormaterials.EmeraldArmor;
 import net.enhanced.gear.materials.armormaterials.ObsidianArmor;
 import net.enhanced.gear.materials.armormaterials.RubyArmor;
 import net.enhanced.gear.materials.armormaterials.StoneArmor;
-import net.enhanced.gear.materials.supertoolmaterials.DiamondSupertool;
-import net.enhanced.gear.materials.supertoolmaterials.EmeraldSupertool;
-import net.enhanced.gear.materials.supertoolmaterials.GoldSupertool;
-import net.enhanced.gear.materials.supertoolmaterials.IronSupertool;
+import net.enhanced.gear.materials.supertoolmaterials.*;
 import net.enhanced.gear.materials.toolmaterials.EmeraldTool;
 import net.enhanced.gear.materials.toolmaterials.ObsidianTool;
 import net.enhanced.gear.materials.toolmaterials.RubyTool;
@@ -129,11 +129,11 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.IRON_PLOW));
 
                 //Gold
-                stacks.add(new ItemStack(EnhancedGear.GOLD_CRATER_CREATOR));
-                stacks.add(new ItemStack(EnhancedGear.GOLD_DRILL));
-                stacks.add(new ItemStack(EnhancedGear.GOLD_SUPERAXE));
-                stacks.add(new ItemStack(EnhancedGear.GOLD_EXCAVATOR));
-                stacks.add(new ItemStack(EnhancedGear.GOLD_PLOW));
+                stacks.add(new ItemStack(EnhancedGear.GOLDEN_CRATER_CREATOR));
+                stacks.add(new ItemStack(EnhancedGear.GOLDEN_DRILL));
+                stacks.add(new ItemStack(EnhancedGear.GOLDEN_SUPERAXE));
+                stacks.add(new ItemStack(EnhancedGear.GOLDEN_EXCAVATOR));
+                stacks.add(new ItemStack(EnhancedGear.GOLDEN_PLOW));
 
                 //Diamond
                 stacks.add(new ItemStack(EnhancedGear.DIAMOND_CRATER_CREATOR));
@@ -148,6 +148,13 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.EMERALD_SUPERAXE));
                 stacks.add(new ItemStack(EnhancedGear.EMERALD_EXCAVATOR));
                 stacks.add(new ItemStack(EnhancedGear.EMERALD_PLOW));
+
+                //Ruby
+                stacks.add(new ItemStack(EnhancedGear.RUBY_CRATER_CREATOR));
+                stacks.add(new ItemStack(EnhancedGear.RUBY_DRILL));
+                stacks.add(new ItemStack(EnhancedGear.RUBY_SUPERAXE));
+                stacks.add(new ItemStack(EnhancedGear.RUBY_EXCAVATOR));
+                stacks.add(new ItemStack(EnhancedGear.RUBY_PLOW));
             })
             .build();
     /*
@@ -222,12 +229,12 @@ public class EnhancedGear implements ModInitializer {
     public static final IronPlow IRON_PLOW = new IronPlow(IronSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
 
     //Gold
-    public static final GoldSupertool GoldSupertool = new GoldSupertool();
-    public static final GoldCraterCreator GOLD_CRATER_CREATOR = new GoldCraterCreator(GoldSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
-    public static final GoldDrill GOLD_DRILL = new GoldDrill(GoldSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
-    public static final GoldSuperaxe GOLD_SUPERAXE = new GoldSuperaxe(GoldSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
-    public static final GoldExcavator GOLD_EXCAVATOR = new GoldExcavator(GoldSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
-    public static final GoldPlow GOLD_PLOW = new GoldPlow(GoldSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final GoldenSupertool GoldenSupertool = new GoldenSupertool();
+    public static final GoldenCraterCreator GOLDEN_CRATER_CREATOR = new GoldenCraterCreator(GoldenSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final GoldenDrill GOLDEN_DRILL = new GoldenDrill(GoldenSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final GoldenSuperaxe GOLDEN_SUPERAXE = new GoldenSuperaxe(GoldenSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final GoldenExcavator GOLDEN_EXCAVATOR = new GoldenExcavator(GoldenSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final GoldenPlow GOLDEN_PLOW = new GoldenPlow(GoldenSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
     
     //Diamond
     public static final DiamondSupertool DiamondSupertool = new DiamondSupertool();
@@ -244,6 +251,14 @@ public class EnhancedGear implements ModInitializer {
     public static final EmeraldSuperaxe EMERALD_SUPERAXE = new EmeraldSuperaxe(EmeraldSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final EmeraldExcavator EMERALD_EXCAVATOR = new EmeraldExcavator(EmeraldSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final EmeraldPlow EMERALD_PLOW = new EmeraldPlow(EmeraldSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
+
+    //Ruby
+    public static final RubySupertool RubySupertool = new RubySupertool();
+    public static final RubyCraterCreator RUBY_CRATER_CREATOR = new RubyCraterCreator(RubySupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final RubyDrill RUBY_DRILL = new RubyDrill(RubySupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final RubySuperaxe RUBY_SUPERAXE = new RubySuperaxe(RubySupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final RubyExcavator RUBY_EXCAVATOR = new RubyExcavator(RubySupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final RubyPlow RUBY_PLOW = new RubyPlow(RubySupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
 
     //Tags
     public static final Tag<Block> STONEY = TagRegistry.block(new Identifier(modid, "stoney"));
@@ -323,11 +338,11 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "iron_plow"), IRON_PLOW);
 
         //Gold
-        Registry.register(Registry.ITEM, new Identifier(modid, "gold_superaxe"), GOLD_SUPERAXE);
-        Registry.register(Registry.ITEM, new Identifier(modid, "gold_crater_creator"), GOLD_CRATER_CREATOR);
-        Registry.register(Registry.ITEM, new Identifier(modid, "gold_drill"), GOLD_DRILL);
-        Registry.register(Registry.ITEM, new Identifier(modid, "gold_excavator"), GOLD_EXCAVATOR);
-        Registry.register(Registry.ITEM, new Identifier(modid, "gold_plow"), GOLD_PLOW);
+        Registry.register(Registry.ITEM, new Identifier(modid, "golden_superaxe"), GOLDEN_SUPERAXE);
+        Registry.register(Registry.ITEM, new Identifier(modid, "golden_crater_creator"), GOLDEN_CRATER_CREATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "golden_drill"), GOLDEN_DRILL);
+        Registry.register(Registry.ITEM, new Identifier(modid, "golden_excavator"), GOLDEN_EXCAVATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "golden_plow"), GOLDEN_PLOW);
 
         //Diamond
         Registry.register(Registry.ITEM, new Identifier(modid, "diamond_superaxe"), DIAMOND_SUPERAXE);
@@ -342,6 +357,13 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "emerald_drill"), EMERALD_DRILL);
         Registry.register(Registry.ITEM, new Identifier(modid, "emerald_excavator"), EMERALD_EXCAVATOR);
         Registry.register(Registry.ITEM, new Identifier(modid, "emerald_plow"), EMERALD_PLOW);
+
+        //Ruby
+        Registry.register(Registry.ITEM, new Identifier(modid, "ruby_superaxe"), RUBY_SUPERAXE);
+        Registry.register(Registry.ITEM, new Identifier(modid, "ruby_crater_creator"), RUBY_CRATER_CREATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "ruby_drill"), RUBY_DRILL);
+        Registry.register(Registry.ITEM, new Identifier(modid, "ruby_excavator"), RUBY_EXCAVATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "ruby_plow"), RUBY_PLOW);
 
         //Cycles through all biomes, then checks for new ones. See handleBiome to see what they do for each biome
         Registry.BIOME.forEach(this::handleBiome);

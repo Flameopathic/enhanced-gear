@@ -32,6 +32,6 @@ public class EmeraldSupertool implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.GOLD_BLOCK);
+        return Ingredient.ofItems(Items.EMERALD_BLOCK);
     }
 }

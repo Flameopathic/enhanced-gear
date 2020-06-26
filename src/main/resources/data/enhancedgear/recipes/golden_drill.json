@@ -7,7 +7,7 @@
     ],
     "key": {
         "#": {
-            "item": "minecraft:emerald_block"
+            "item": "minecraft:gold_block"
         },
         "i": {
             "item": "minecraft:iron_ingot"
@@ -17,7 +17,7 @@
         }
     },
     "result": {
-        "item": "enhancedgear:emerald_drill",
+        "item": "enhancedgear:gold_drill",
         "count": 1
     }
 }

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " iI",
+        "i /",
+        "  /"
+    ],
+    "key": {
+        "i": {
+            "item": "enhancedgear:ruby"
+        },
+        "I": {
+            "item": "enhancedgear:ruby_block"
+        },
+        "/": {
+            "item": "minecraft:lapis_lazuli"
+        }
+    },
+    "result": {
+        "item": "enhancedgear:ruby_plow",
+        "count": 1
+    }
+}

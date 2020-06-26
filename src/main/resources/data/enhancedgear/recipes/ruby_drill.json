@@ -1,23 +1,26 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "  #",
+        " l#",
         "iR#",
         " i "
     ],
     "key": {
+        "l": {
+            "item": "minecraft:lapis_lazuli"
+        },
         "#": {
-            "item": "minecraft:gold_block"
+            "item": "enhancedgear:ruby_block"
         },
         "i": {
-            "item": "minecraft:gold_ingot"
+            "item": "minecraft:iron_ingot"
         },
         "R": {
             "item": "minecraft:redstone"
         }
     },
     "result": {
-        "item": "enhancedgear:gold_drill",
+        "item": "enhancedgear:ruby_drill",
         "count": 1
     }
 }

@@ -1,10 +1,11 @@
 package net.enhanced.gear.materials.supertoolmaterials;
 
+import net.enhanced.gear.EnhancedGear;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class DiamondSupertool implements ToolMaterial {
+public class RubySupertool implements ToolMaterial {
     @Override
     public int getDurability() {
         return 1561;
@@ -27,11 +28,11 @@ public class DiamondSupertool implements ToolMaterial {
 
     @Override
     public int getEnchantability() {
-        return 30;
+        return 200;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.DIAMOND_BLOCK);
+        return Ingredient.ofItems(EnhancedGear.RUBY_BLOCK);
     }
 }
