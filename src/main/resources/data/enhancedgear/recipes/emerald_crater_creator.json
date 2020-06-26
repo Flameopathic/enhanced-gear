@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#T#",
+        "#R#",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:emerald_block"
+        },
+        "T": {
+            "item": "minecraft:tnt"
+        },
+        "R": {
+            "item": "minecraft:redstone_torch"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "enhancedgear:emerald_crater_creator",
+        "count": 1
+    }
+}

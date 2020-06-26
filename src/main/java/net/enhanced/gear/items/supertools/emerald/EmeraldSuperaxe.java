@@ -1,17 +1,19 @@
-package net.enhanced.gear.items.supertools.iron;
+package net.enhanced.gear.items.supertools.emerald;
 
 import net.enhanced.gear.EnhancedGear;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class IronSuperaxe extends AxeItem {
+public class EmeraldSuperaxe extends AxeItem {
 
-    public IronSuperaxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+    public EmeraldSuperaxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
 

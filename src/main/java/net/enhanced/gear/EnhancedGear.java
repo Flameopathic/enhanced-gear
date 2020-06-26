@@ -8,6 +8,7 @@ import net.enhanced.gear.blocks.RubyBlock;
 import net.enhanced.gear.blocks.RubyOre;
 import net.enhanced.gear.items.Ruby;
 import net.enhanced.gear.items.supertools.diamond.*;
+import net.enhanced.gear.items.supertools.emerald.*;
 import net.enhanced.gear.items.supertools.gold.*;
 import net.enhanced.gear.items.supertools.iron.*;
 import net.enhanced.gear.items.tools.*;
@@ -16,6 +17,7 @@ import net.enhanced.gear.materials.armormaterials.ObsidianArmor;
 import net.enhanced.gear.materials.armormaterials.RubyArmor;
 import net.enhanced.gear.materials.armormaterials.StoneArmor;
 import net.enhanced.gear.materials.supertoolmaterials.DiamondSupertool;
+import net.enhanced.gear.materials.supertoolmaterials.EmeraldSupertool;
 import net.enhanced.gear.materials.supertoolmaterials.GoldSupertool;
 import net.enhanced.gear.materials.supertoolmaterials.IronSupertool;
 import net.enhanced.gear.materials.toolmaterials.EmeraldTool;
@@ -35,7 +37,6 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -140,12 +141,19 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.DIAMOND_SUPERAXE));
                 stacks.add(new ItemStack(EnhancedGear.DIAMOND_EXCAVATOR));
                 stacks.add(new ItemStack(EnhancedGear.DIAMOND_PLOW));
+
+                //Emerald
+                stacks.add(new ItemStack(EnhancedGear.EMERALD_CRATER_CREATOR));
+                stacks.add(new ItemStack(EnhancedGear.EMERALD_DRILL));
+                stacks.add(new ItemStack(EnhancedGear.EMERALD_SUPERAXE));
+                stacks.add(new ItemStack(EnhancedGear.EMERALD_EXCAVATOR));
+                stacks.add(new ItemStack(EnhancedGear.EMERALD_PLOW));
             })
             .build();
     /*
     This next area is for item definitions, which I have put all of the settings into.
     Their respective classes are only used for the constructors and any extra functionality to be added to the item.
-     */
+    */
 
     //Emerald tools
     public static final EmeraldTool EmeraldTool = new EmeraldTool();
@@ -205,7 +213,6 @@ public class EnhancedGear implements ModInitializer {
     public static final Block RUBY_BLOCK = new RubyBlock(FabricBlockSettings.of(Material.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(3, 3f));
 
     //Super tools
-    
     //Iron
     public static final IronSupertool IronSupertool = new IronSupertool();
     public static final IronCraterCreator IRON_CRATER_CREATOR = new IronCraterCreator(IronSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
@@ -230,6 +237,14 @@ public class EnhancedGear implements ModInitializer {
     public static final DiamondExcavator DIAMOND_EXCAVATOR = new DiamondExcavator(DiamondSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final DiamondPlow DIAMOND_PLOW = new DiamondPlow(DiamondSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
 
+    //Emerald
+    public static final EmeraldSupertool EmeraldSupertool = new EmeraldSupertool();
+    public static final EmeraldCraterCreator EMERALD_CRATER_CREATOR = new EmeraldCraterCreator(EmeraldSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final EmeraldDrill EMERALD_DRILL = new EmeraldDrill(EmeraldSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final EmeraldSuperaxe EMERALD_SUPERAXE = new EmeraldSuperaxe(EmeraldSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final EmeraldExcavator EMERALD_EXCAVATOR = new EmeraldExcavator(EmeraldSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final EmeraldPlow EMERALD_PLOW = new EmeraldPlow(EmeraldSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
+
     //Tags
     public static final Tag<Block> STONEY = TagRegistry.block(new Identifier(modid, "stoney"));
     public static final Tag<Block> ORES = TagRegistry.block(new Identifier(modid, "ores"));
@@ -243,7 +258,7 @@ public class EnhancedGear implements ModInitializer {
         new Identifier(modid, "item_name"), item_name is defining what item_name is identified as.
         For example, new Identifier(modid, "emerald_sword"), emerald_sword defines emerald_sword as enhancedgear:emerald_sword.
         The identifier is what you would type in the /give command to get the item.
-         */
+        */
 
         //Emerald tools
         Registry.register(Registry.ITEM, new Identifier(modid, "emerald_sword"), EMERALD_SWORD);
@@ -289,7 +304,7 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "stone_vest"), STONE_VEST);
         Registry.register(Registry.ITEM, new Identifier(modid, "stone_leg_plating"), STONE_LEG_PLATING);
         Registry.register(Registry.ITEM, new Identifier(modid, "stone_boots"), STONE_BOOTS);
-
+        
         Registry.register(Registry.ITEM, new Identifier(modid, "ruby"), RUBY);
 
         //Both Block and BlockItem must be registered for it to be place-able and in the inventory
@@ -321,6 +336,13 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "diamond_excavator"), DIAMOND_EXCAVATOR);
         Registry.register(Registry.ITEM, new Identifier(modid, "diamond_plow"), DIAMOND_PLOW);
 
+        //Emerald
+        Registry.register(Registry.ITEM, new Identifier(modid, "emerald_superaxe"), EMERALD_SUPERAXE);
+        Registry.register(Registry.ITEM, new Identifier(modid, "emerald_crater_creator"), EMERALD_CRATER_CREATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "emerald_drill"), EMERALD_DRILL);
+        Registry.register(Registry.ITEM, new Identifier(modid, "emerald_excavator"), EMERALD_EXCAVATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "emerald_plow"), EMERALD_PLOW);
+
         //Cycles through all biomes, then checks for new ones. See handleBiome to see what they do for each biome
         Registry.BIOME.forEach(this::handleBiome);
         RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
@@ -334,7 +356,7 @@ public class EnhancedGear implements ModInitializer {
                             new OreFeatureConfig(
                                     OreFeatureConfig.Target.NATURAL_STONE,
                                     RUBY_ORE.getDefaultState(),
-                                    5        //maximum vein size
+                                    5       //maximum vein size
                             )).createDecoratedFeature(
                             Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
                                     3,     //maximum number per chunk

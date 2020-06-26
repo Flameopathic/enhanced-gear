@@ -7,17 +7,17 @@
     ],
     "key": {
         "i": {
-            "item": "minecraft:diamond"
+            "item": "minecraft:emerald"
         },
         "I": {
-            "item": "minecraft:diamond_block"
+            "item": "minecraft:emerald_block"
         },
         "/": {
             "item": "minecraft:stick"
         }
     },
     "result": {
-        "item": "enhancedgear:diamond_plow",
+        "item": "enhancedgear:emerald_plow",
         "count": 1
     }
 }

@@ -7,17 +7,17 @@
     ],
     "key": {
         "#": {
-            "item": "minecraft:diamond_block"
+            "item": "minecraft:emerald_block"
         },
         "i": {
-            "item": "minecraft:diamond"
+            "item": "minecraft:emerald"
         },
         "R": {
             "item": "minecraft:redstone"
         }
     },
     "result": {
-        "item": "enhancedgear:diamond_drill",
+        "item": "enhancedgear:emerald_drill",
         "count": 1
     }
 }

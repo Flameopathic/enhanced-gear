@@ -42,6 +42,11 @@
     "item.enhancedgear.ruby.warning_3":  "try using a lower enchanting",
     "item.enhancedgear.ruby.warning_4":  "level if they do not enchant.",
 
+    "item.enhancedgear.stone_helmet": "Stone Helmet",
+    "item.enhancedgear.stone_vest": "Stone Vest",
+    "item.enhancedgear.stone_leg_plating": "Stone Leg Plating",
+    "item.enhancedgear.stone_boots": "Stone Boots",
+
     "itemGroup.enhancedgear.group": "Enhanced Gear",
     "itemGroup.enhancedgear.supertool_group": "Enhanced Supertools",
 
@@ -61,5 +66,11 @@
     "item.enhancedgear.diamond_drill": "Diamond Drill",
     "item.enhancedgear.diamond_superaxe": "Diamond Superaxe",
     "item.enhancedgear.diamond_excavator": "Diamond Excavator",
-    "item.enhancedgear.diamond_plow": "Diamond Plow"
+    "item.enhancedgear.diamond_plow": "Diamond Plow",
+
+    "item.enhancedgear.emerald_crater_creator": "Emerald Crater Creator",
+    "item.enhancedgear.emerald_drill": "Emerald Drill",
+    "item.enhancedgear.emerald_superaxe": "Emerald Superaxe",
+    "item.enhancedgear.emerald_excavator": "Emerald Excavator",
+    "item.enhancedgear.emerald_plow": "Emerald Plow"
 }

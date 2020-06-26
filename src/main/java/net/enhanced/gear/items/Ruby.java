@@ -18,7 +18,7 @@ public class Ruby extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(new TranslatableText("item.enhancedgear.ruby.warning_0").styled((style) -> style.setColor(Formatting.RED)));
+        tooltip.add(new TranslatableText("item.enhancedgear.ruby.newline").styled((style) -> style.setColor(Formatting.RED)));
         tooltip.add(new TranslatableText("item.enhancedgear.ruby.warning_1").styled((style) -> style.setColor(Formatting.RED)));
         tooltip.add(new TranslatableText("item.enhancedgear.ruby.warning_2").styled((style) -> style.setColor(Formatting.RED)));
         tooltip.add(new TranslatableText("item.enhancedgear.ruby.warning_3").styled((style) -> style.setColor(Formatting.RED)));

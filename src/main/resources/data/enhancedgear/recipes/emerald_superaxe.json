@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#/#",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:emerald_block"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "enhancedgear:emerald_superaxe",
+        "count": 1
+    }
+}
