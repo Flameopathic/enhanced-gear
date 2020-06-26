@@ -3,7 +3,6 @@ package net.enhanced.gear.items.supertools.diamond;
 import net.enhanced.gear.EnhancedGear;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " iI",
+        "i /",
+        "  /"
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:obsidian"
+        },
+        "I": {
+            "item": "enhancedgear:diamond_plow"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "enhancedgear:obsidian_plow",
+        "count": 1
+    }
+}

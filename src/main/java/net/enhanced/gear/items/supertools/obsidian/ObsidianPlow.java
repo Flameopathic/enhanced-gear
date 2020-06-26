@@ -1,18 +1,15 @@
-package net.enhanced.gear.items.supertools.gold;
+package net.enhanced.gear.items.supertools.obsidian;
 
 import net.enhanced.gear.EnhancedGear;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class GoldenPlow extends HoeItem {
+public class ObsidianPlow extends HoeItem {
 
-    public GoldenPlow(ToolMaterial material, float attackSpeed, Settings settings) {
+    public ObsidianPlow(ToolMaterial material, float attackSpeed, Settings settings) {
         super(material, attackSpeed, settings);
     }
 

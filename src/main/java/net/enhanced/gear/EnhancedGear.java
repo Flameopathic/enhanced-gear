@@ -11,6 +11,11 @@ import net.enhanced.gear.items.supertools.diamond.*;
 import net.enhanced.gear.items.supertools.emerald.*;
 import net.enhanced.gear.items.supertools.gold.*;
 import net.enhanced.gear.items.supertools.iron.*;
+import net.enhanced.gear.items.supertools.obsidian.ObsidianCraterCreator;
+import net.enhanced.gear.items.supertools.obsidian.ObsidianDrill;
+import net.enhanced.gear.items.supertools.obsidian.ObsidianExcavator;
+import net.enhanced.gear.items.supertools.obsidian.ObsidianPlow;
+import net.enhanced.gear.items.supertools.obsidian.ObsidianSuperaxe;
 import net.enhanced.gear.items.supertools.ruby.*;
 import net.enhanced.gear.items.tools.emerald.*;
 import net.enhanced.gear.items.tools.obsidian.*;
@@ -155,6 +160,13 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.RUBY_SUPERAXE));
                 stacks.add(new ItemStack(EnhancedGear.RUBY_EXCAVATOR));
                 stacks.add(new ItemStack(EnhancedGear.RUBY_PLOW));
+
+                //Obsidian
+                stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_CRATER_CREATOR));
+                stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_DRILL));
+                stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_SUPERAXE));
+                stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_EXCAVATOR));
+                stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_PLOW));
             })
             .build();
     /*
@@ -260,6 +272,14 @@ public class EnhancedGear implements ModInitializer {
     public static final RubyExcavator RUBY_EXCAVATOR = new RubyExcavator(RubySupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final RubyPlow RUBY_PLOW = new RubyPlow(RubySupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
 
+    //Obsidian
+    public static final ObsidianSupertool ObsidianSupertool = new ObsidianSupertool();
+    public static final ObsidianCraterCreator OBSIDIAN_CRATER_CREATOR = new ObsidianCraterCreator(ObsidianSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final ObsidianDrill OBSIDIAN_DRILL = new ObsidianDrill(ObsidianSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final ObsidianSuperaxe OBSIDIAN_SUPERAXE = new ObsidianSuperaxe(ObsidianSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final ObsidianExcavator OBSIDIAN_EXCAVATOR = new ObsidianExcavator(ObsidianSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final ObsidianPlow OBSIDIAN_PLOW = new ObsidianPlow(ObsidianSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
+
     //Tags
     public static final Tag<Block> STONEY = TagRegistry.block(new Identifier(modid, "stoney"));
     public static final Tag<Block> ORES = TagRegistry.block(new Identifier(modid, "ores"));
@@ -364,6 +384,13 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "ruby_drill"), RUBY_DRILL);
         Registry.register(Registry.ITEM, new Identifier(modid, "ruby_excavator"), RUBY_EXCAVATOR);
         Registry.register(Registry.ITEM, new Identifier(modid, "ruby_plow"), RUBY_PLOW);
+
+        //Obsidian
+        Registry.register(Registry.ITEM, new Identifier(modid, "obsidian_superaxe"), OBSIDIAN_SUPERAXE);
+        Registry.register(Registry.ITEM, new Identifier(modid, "obsidian_crater_creator"), OBSIDIAN_CRATER_CREATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "obsidian_drill"), OBSIDIAN_DRILL);
+        Registry.register(Registry.ITEM, new Identifier(modid, "obsidian_excavator"), OBSIDIAN_EXCAVATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "obsidian_plow"), OBSIDIAN_PLOW);
 
         //Cycles through all biomes, then checks for new ones. See handleBiome to see what they do for each biome
         Registry.BIOME.forEach(this::handleBiome);

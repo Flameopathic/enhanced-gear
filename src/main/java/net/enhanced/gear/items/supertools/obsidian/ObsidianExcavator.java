@@ -1,19 +1,16 @@
-package net.enhanced.gear.items.supertools.diamond;
+package net.enhanced.gear.items.supertools.obsidian;
 
 import net.enhanced.gear.EnhancedGear;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class DiamondExcavator extends ShovelItem {
-    public DiamondExcavator(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+public class ObsidianExcavator extends ShovelItem {
+    public ObsidianExcavator(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
 

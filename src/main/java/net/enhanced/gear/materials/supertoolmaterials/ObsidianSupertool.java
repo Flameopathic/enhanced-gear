@@ -1,13 +1,13 @@
 package net.enhanced.gear.materials.supertoolmaterials;
 
-import net.enhanced.gear.EnhancedGear;
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class RubySupertool implements ToolMaterial {
+public class ObsidianSupertool implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 1561;
+        return 250;
     }
 
     @Override
@@ -22,16 +22,16 @@ public class RubySupertool implements ToolMaterial {
 
     @Override
     public int getMiningLevel() {
-        return 1;
+        return 2;
     }
 
     @Override
     public int getEnchantability() {
-        return 200;
+        return 14;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(EnhancedGear.RUBY_BLOCK);
+        return Ingredient.ofItems(Items.DIAMOND_BLOCK);
     }
 }

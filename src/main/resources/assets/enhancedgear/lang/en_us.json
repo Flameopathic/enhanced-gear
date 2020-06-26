@@ -78,5 +78,11 @@
     "item.enhancedgear.ruby_drill": "Ruby Drill",
     "item.enhancedgear.ruby_superaxe": "Ruby Superaxe",
     "item.enhancedgear.ruby_excavator": "Ruby Excavator",
-    "item.enhancedgear.ruby_plow": "Ruby Plow"
+    "item.enhancedgear.ruby_plow": "Ruby Plow",
+
+    "item.enhancedgear.obsidian_crater_creator": "Obsidian Crater Creator",
+    "item.enhancedgear.obsidian_drill": "Obsidian Drill",
+    "item.enhancedgear.obsidian_superaxe": "Obsidian Superaxe",
+    "item.enhancedgear.obsidian_excavator": "Obsidian Excavator",
+    "item.enhancedgear.obsidian_plow": "Obsidian Plow"
 }

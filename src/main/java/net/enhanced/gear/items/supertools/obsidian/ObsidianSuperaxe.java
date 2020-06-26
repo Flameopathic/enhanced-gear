@@ -1,19 +1,17 @@
-package net.enhanced.gear.items.supertools.gold;
+package net.enhanced.gear.items.supertools.obsidian;
 
 import net.enhanced.gear.EnhancedGear;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class GoldenSuperaxe extends AxeItem {
+public class ObsidianSuperaxe extends AxeItem {
 
-    public GoldenSuperaxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+    public ObsidianSuperaxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
 
