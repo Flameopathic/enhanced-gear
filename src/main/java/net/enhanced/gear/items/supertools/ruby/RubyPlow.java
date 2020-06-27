@@ -14,6 +14,8 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
+import static net.enhanced.gear.Util.plower;
+
 public class RubyPlow extends HoeItem {
 
     public RubyPlow(ToolMaterial material, float attackSpeed, Settings settings) {
@@ -33,7 +35,7 @@ public class RubyPlow extends HoeItem {
         World world = context.getWorld();
         ItemStack stack = context.getStack();
         LivingEntity user = context.getPlayer();
-        EnhancedGear.plower(pos, world, 3, stack, user);
+        plower(pos, world, 3, stack, user);
         return ActionResult.SUCCESS;
     }
 }
