@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 public class ObsidianSupertool implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 250;
+        return 2000;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class ObsidianSupertool implements ToolMaterial {
 
     @Override
     public int getMiningLevel() {
-        return 2;
+        return 3;
     }
 
     @Override

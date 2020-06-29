@@ -1,4 +1,4 @@
-package net.enhanced.gear.items.supertools.obsidian;
+package net.enhanced.gear.items.supertools.iron;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -11,9 +11,9 @@ import net.minecraft.world.World;
 import static net.enhanced.gear.Util.checkWithTag;
 import static net.enhanced.gear.Util.veinMiner;
 
-public class ObsidianSuperaxe extends AxeItem {
+public class IronBattleAxe extends AxeItem {
 
-    public ObsidianSuperaxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+    public IronBattleAxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
 

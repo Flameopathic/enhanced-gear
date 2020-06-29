@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 public class RubySupertool implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 1561;
+        return 1000;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class RubySupertool implements ToolMaterial {
 
     @Override
     public int getMiningLevel() {
-        return 1;
+        return 3;
     }
 
     @Override

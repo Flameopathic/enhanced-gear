@@ -1,11 +1,9 @@
-package net.enhanced.gear.items.supertools.gold;
+package net.enhanced.gear.items.supertools.obsidian;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -13,9 +11,9 @@ import net.minecraft.world.World;
 import static net.enhanced.gear.Util.checkWithTag;
 import static net.enhanced.gear.Util.veinMiner;
 
-public class GoldenSuperaxe extends AxeItem {
+public class ObsidianBattleAxe extends AxeItem {
 
-    public GoldenSuperaxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+    public ObsidianBattleAxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
 

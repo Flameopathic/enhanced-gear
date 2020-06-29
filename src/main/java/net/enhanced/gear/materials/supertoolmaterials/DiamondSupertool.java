@@ -22,12 +22,12 @@ public class DiamondSupertool implements ToolMaterial {
 
     @Override
     public int getMiningLevel() {
-        return 1;
+        return 3;
     }
 
     @Override
     public int getEnchantability() {
-        return 30;
+        return 10;
     }
 
     @Override

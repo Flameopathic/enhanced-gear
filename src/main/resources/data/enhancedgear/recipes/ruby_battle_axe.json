@@ -7,14 +7,14 @@
     ],
     "key": {
         "#": {
-            "item": "minecraft:gold_block"
+            "item": "enhancedgear:ruby_block"
         },
         "/": {
-            "item": "minecraft:stick"
+            "item": "minecraft:lapis_lazuli"
         }
     },
     "result": {
-        "item": "enhancedgear:gold_superaxe",
+        "item": "enhancedgear:ruby_battle_axe",
         "count": 1
     }
 }

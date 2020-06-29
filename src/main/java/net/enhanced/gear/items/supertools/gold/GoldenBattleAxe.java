@@ -1,4 +1,4 @@
-package net.enhanced.gear.items.supertools.diamond;
+package net.enhanced.gear.items.supertools.gold;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -13,9 +13,9 @@ import net.minecraft.world.World;
 import static net.enhanced.gear.Util.checkWithTag;
 import static net.enhanced.gear.Util.veinMiner;
 
-public class DiamondSuperaxe extends AxeItem {
+public class GoldenBattleAxe extends AxeItem {
 
-    public DiamondSuperaxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+    public GoldenBattleAxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
 

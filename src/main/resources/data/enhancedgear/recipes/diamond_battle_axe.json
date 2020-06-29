@@ -7,14 +7,14 @@
     ],
     "key": {
         "#": {
-            "item": "minecraft:emerald_block"
+            "item": "minecraft:diamond_block"
         },
         "/": {
             "item": "minecraft:stick"
         }
     },
     "result": {
-        "item": "enhancedgear:emerald_superaxe",
+        "item": "enhancedgear:diamond_battle_axe",
         "count": 1
     }
 }

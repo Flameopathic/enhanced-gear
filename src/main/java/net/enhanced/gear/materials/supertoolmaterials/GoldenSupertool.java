@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 public class GoldenSupertool implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 250;
+        return 32;
     }
 
     @Override

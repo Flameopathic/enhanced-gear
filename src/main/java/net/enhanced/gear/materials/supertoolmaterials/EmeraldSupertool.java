@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 public class EmeraldSupertool implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 1561;
+        return 32;
     }
 
     @Override
@@ -22,12 +22,12 @@ public class EmeraldSupertool implements ToolMaterial {
 
     @Override
     public int getMiningLevel() {
-        return 1;
+        return 3;
     }
 
     @Override
     public int getEnchantability() {
-        return 30;
+        return 10;
     }
 
     @Override

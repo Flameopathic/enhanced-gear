@@ -10,14 +10,14 @@
             "item": "minecraft:obsidian"
         },
         "l": {
-            "item": "enhancedgear:diamond_superaxek"
+            "item": "enhancedgear:diamond_battle_axe"
         },
         "/": {
             "item": "minecraft:stick"
         }
     },
     "result": {
-        "item": "enhancedgear:obsidian_superaxe",
+        "item": "enhancedgear:obsidian_battle_axe",
         "count": 1
     }
 }
