@@ -34,7 +34,7 @@ public class RubyExcavator extends ShovelItem {
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         cubeMiner(pos, checkWithToolType(Items.IRON_SHOVEL), world, 3, stack, miner);
         System.out.println(world.isClient);
-        ((ServerWorld) world).spawnParticles(ParticleTypes.SMOKE, pos.getX(), pos.getY(), pos.getZ(), 1000, 0.1, 0.1, 0.1, 0.1);
+        ((ServerWorld) world).spawnParticles(ParticleTypes.SMOKE, pos.getX(), pos.getY(), pos.getZ(), 100, 0.1, 0.1, 0.1, 0.1);
         return true;
     }
 }

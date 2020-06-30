@@ -12,7 +12,7 @@ public class GoldenSupertool implements ToolMaterial {
 
     @Override
     public float getMiningSpeed() {
-        return 2f;
+        return 3f;
     }
 
     @Override

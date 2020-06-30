@@ -1,5 +1,6 @@
 package net.enhanced.gear.items.supertools.gold;
 
+import net.enhanced.gear.EnhancedGear;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -21,9 +22,10 @@ public class GoldenExcavator extends ShovelItem {
 
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
+        System.out.println(EnhancedGear.GOLDEN_EXCAVATOR.getMiningSpeed(stack, state));
         cubeMiner(pos, checkWithToolType(Items.GOLDEN_SHOVEL), world, 3, stack, miner);
         System.out.println(world.isClient);
-        ((ServerWorld) world).spawnParticles(ParticleTypes.SMOKE, pos.getX(), pos.getY(), pos.getZ(), 1000, 0.1, 0.1, 0.1, 0.1);
+        ((ServerWorld) world).spawnParticles(ParticleTypes.SMOKE, pos.getX(), pos.getY(), pos.getZ(), 100, 0.1, 0.1, 0.1, 0.1);
         return true;
     }
 }

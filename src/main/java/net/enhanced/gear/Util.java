@@ -104,8 +104,8 @@ public class Util {
                     BlockPos current = pos.add(x, y, z);
                     BlockState state = world.getBlockState(current);
                     Block block = state.getBlock();
-                    if ((block.equals(Blocks.DIRT) && (world.getBlockState(current.up()).getBlock().equals(Blocks.AIR) || world.getBlockState(current.up()).getBlock().equals(Blocks.CAVE_AIR)))
-                            || (block.equals(Blocks.GRASS_BLOCK) && (world.getBlockState(current.up()).getBlock().equals(Blocks.AIR) || world.getBlockState(current.up()).getBlock().equals(Blocks.CAVE_AIR)))) {
+                    if ((block.equals(Blocks.DIRT) || block.equals(Blocks.GRASS_BLOCK)) &&
+                            world.getBlockState(current.up()).getBlock().isAir(world.getBlockState(current.up()))){
                         if (stack.getDamage() < stack.getMaxDamage()) {
                             world.setBlockState(current, Blocks.FARMLAND.getDefaultState());
                             stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));

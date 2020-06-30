@@ -12,7 +12,7 @@ public class EmeraldSupertool implements ToolMaterial {
 
     @Override
     public float getMiningSpeed() {
-        return 2f;
+        return 2.5f;
     }
 
     @Override
