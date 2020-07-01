@@ -47,5 +47,10 @@ public class ObsidianArmor implements ArmorMaterial {
     public float getToughness() {
         return 2;
     }
-    
+
+    @Override
+    public float getKnockbackResistance() {
+        return 0;
+    }
+
 }

@@ -10,8 +10,9 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class RubyHoe extends HoeItem {
-    public RubyHoe(ToolMaterial material, float attackSpeed, Settings settings) {
-        super(material, attackSpeed, settings);
+
+    public RubyHoe(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
     }
 
     @Override

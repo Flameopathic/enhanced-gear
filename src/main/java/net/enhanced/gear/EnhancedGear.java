@@ -4,6 +4,7 @@ import net.enhanced.gear.armor.EmeraldArmorBase;
 import net.enhanced.gear.armor.ObsidianArmorBase;
 import net.enhanced.gear.armor.RubyArmorBase;
 import net.enhanced.gear.armor.StoneArmorBase;
+import net.enhanced.gear.blocks.CompressedObsidian;
 import net.enhanced.gear.blocks.RubyBlock;
 import net.enhanced.gear.blocks.RubyOre;
 import net.enhanced.gear.items.Ruby;
@@ -110,6 +111,7 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.RUBY));
                 stacks.add(new ItemStack(EnhancedGear.RUBY_ORE));
                 stacks.add(new ItemStack(EnhancedGear.RUBY_BLOCK));
+                stacks.add(new ItemStack(EnhancedGear.COMPRESSED_OBSIDIAN));
             })
             .build();
 
@@ -168,10 +170,10 @@ public class EnhancedGear implements ModInitializer {
     //Emerald tools
     public static final EmeraldTool EmeraldTool = new EmeraldTool();
     public static final EmeraldSword EMERALD_SWORD = new EmeraldSword(EmeraldTool, 3, -2.4f, new Item.Settings().group(GROUP));
-    public static final EmeraldPickaxe EMERALD_PICKAXE = new EmeraldPickaxe(EmeraldTool, 1, -2.8f, new Item.Settings().group(GROUP));
+    public static final EmeraldPickaxe EMERALD_PICKAXE = new EmeraldPickaxe(EmeraldTool, 1, -3f, new Item.Settings().group(GROUP));
     public static final EmeraldAxe EMERALD_AXE = new EmeraldAxe(EmeraldTool, 5, -3, new Item.Settings().group(GROUP));
     public static final EmeraldShovel EMERALD_SHOVEL = new EmeraldShovel(EmeraldTool, 1.5f, -3f, new Item.Settings().group(GROUP));
-    public static final EmeraldHoe EMERALD_HOE = new EmeraldHoe(EmeraldTool, -2.8f, new Item.Settings().group(GROUP));
+    public static final EmeraldHoe EMERALD_HOE = new EmeraldHoe(EmeraldTool, -3, 3f, new Item.Settings().group(GROUP));
 
     //Emerald armor
     public static final EmeraldArmor EmeraldArmor = new EmeraldArmor();
@@ -183,10 +185,10 @@ public class EnhancedGear implements ModInitializer {
     //Obsidian tools
     public static final ObsidianTool ObsidianTool = new ObsidianTool();
     public static final ObsidianSword OBSIDIAN_SWORD = new ObsidianSword(ObsidianTool, 3, -2.4f, new Item.Settings().group(GROUP));
-    public static final ObsidianPickaxe OBSIDIAN_PICKAXE = new ObsidianPickaxe(ObsidianTool, 1, -2.8f, new Item.Settings().group(GROUP));
+    public static final ObsidianPickaxe OBSIDIAN_PICKAXE = new ObsidianPickaxe(ObsidianTool, 1, -3f, new Item.Settings().group(GROUP));
     public static final ObsidianAxe OBSIDIAN_AXE = new ObsidianAxe(ObsidianTool, 5f, -3f, new Item.Settings().group(GROUP));
     public static final ObsidianShovel OBSIDIAN_SHOVEL = new ObsidianShovel(ObsidianTool, 1.5f, -3f, new Item.Settings().group(GROUP));
-    public static final ObsidianHoe OBSIDIAN_HOE = new ObsidianHoe(ObsidianTool, -2.8f, new Item.Settings().group(GROUP));
+    public static final ObsidianHoe OBSIDIAN_HOE = new ObsidianHoe(ObsidianTool, -3, 3f, new Item.Settings().group(GROUP));
 
     //Obsidian armor
     public static final ObsidianArmor ObsidianArmor = new ObsidianArmor();
@@ -198,10 +200,10 @@ public class EnhancedGear implements ModInitializer {
     //Ruby tools
     public static final RubyTool RubyTool = new RubyTool();
     public static final RubySword RUBY_SWORD = new RubySword(RubyTool, 3, -2.4f, new Item.Settings().group(GROUP));
-    public static final RubyPickaxe RUBY_PICKAXE = new RubyPickaxe(RubyTool, 1, -2.8f, new Item.Settings().group(GROUP));
+    public static final RubyPickaxe RUBY_PICKAXE = new RubyPickaxe(RubyTool, 1, -3f, new Item.Settings().group(GROUP));
     public static final RubyAxe RUBY_AXE = new RubyAxe(RubyTool, 5, -3f, new Item.Settings().group(GROUP));
     public static final RubyShovel RUBY_SHOVEL = new RubyShovel(RubyTool, 1.5f, -3f, new Item.Settings().group(GROUP));
-    public static final RubyHoe RUBY_HOE = new RubyHoe(RubyTool, -2.8f, new Item.Settings().group(GROUP));
+    public static final RubyHoe RUBY_HOE = new RubyHoe(RubyTool, -3, 3f, new Item.Settings().group(GROUP));
 
     //Ruby armor
     public static final RubyArmor RubyArmor = new RubyArmor();
@@ -219,9 +221,10 @@ public class EnhancedGear implements ModInitializer {
 
     //Ruby things
     public static final Ruby RUBY = new Ruby(new Item.Settings().group(GROUP));
-    public static final Block RUBY_ORE = new RubyOre(FabricBlockSettings.of(Material.EARTH).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3, 3f));
-    public static final Block RUBY_BLOCK = new RubyBlock(FabricBlockSettings.of(Material.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(3, 3f));
+    public static final RubyOre RUBY_ORE = new RubyOre(FabricBlockSettings.of(Material.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3, 3f));
+    public static final RubyBlock RUBY_BLOCK = new RubyBlock(FabricBlockSettings.of(Material.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(3, 3f));
 
+    public static final CompressedObsidian COMPRESSED_OBSIDIAN = new CompressedObsidian(FabricBlockSettings.of(Material.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(10, 10f));
     //Super tools
     //Iron
     public static final IronSupertool IronSupertool = new IronSupertool();
@@ -229,7 +232,7 @@ public class EnhancedGear implements ModInitializer {
     public static final IronDrill IRON_DRILL = new IronDrill(IronSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final IronBattleAxe IRON_BATTLE_AXE = new IronBattleAxe(IronSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final IronExcavator IRON_EXCAVATOR = new IronExcavator(IronSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
-    public static final IronPlow IRON_PLOW = new IronPlow(IronSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final IronPlow IRON_PLOW = new IronPlow(IronSupertool, 4, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
 
     //Gold
     public static final GoldenSupertool GoldenSupertool = new GoldenSupertool();
@@ -237,7 +240,7 @@ public class EnhancedGear implements ModInitializer {
     public static final GoldenDrill GOLDEN_DRILL = new GoldenDrill(GoldenSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final GoldenBattleAxe GOLDEN_BATTLE_AXE = new GoldenBattleAxe(GoldenSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final GoldenExcavator GOLDEN_EXCAVATOR = new GoldenExcavator(GoldenSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
-    public static final GoldenPlow GOLDEN_PLOW = new GoldenPlow(GoldenSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final GoldenPlow GOLDEN_PLOW = new GoldenPlow(GoldenSupertool, 4, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
 
     //Diamond
     public static final DiamondSupertool DiamondSupertool = new DiamondSupertool();
@@ -245,7 +248,7 @@ public class EnhancedGear implements ModInitializer {
     public static final DiamondDrill DIAMOND_DRILL = new DiamondDrill(DiamondSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final DiamondBattleAxe DIAMOND_BATTLE_AXE = new DiamondBattleAxe(DiamondSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final DiamondExcavator DIAMOND_EXCAVATOR = new DiamondExcavator(DiamondSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
-    public static final DiamondPlow DIAMOND_PLOW = new DiamondPlow(DiamondSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final DiamondPlow DIAMOND_PLOW = new DiamondPlow(DiamondSupertool, 4, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
 
     //Emerald
     public static final EmeraldSupertool EmeraldSupertool = new EmeraldSupertool();
@@ -253,7 +256,7 @@ public class EnhancedGear implements ModInitializer {
     public static final EmeraldDrill EMERALD_DRILL = new EmeraldDrill(EmeraldSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final EmeraldBattleAxe EMERALD_BATTLE_AXE = new EmeraldBattleAxe(EmeraldSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final EmeraldExcavator EMERALD_EXCAVATOR = new EmeraldExcavator(EmeraldSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
-    public static final EmeraldPlow EMERALD_PLOW = new EmeraldPlow(EmeraldSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final EmeraldPlow EMERALD_PLOW = new EmeraldPlow(EmeraldSupertool, 4, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
 
     //Ruby
     public static final RubySupertool RubySupertool = new RubySupertool();
@@ -261,7 +264,7 @@ public class EnhancedGear implements ModInitializer {
     public static final RubyDrill RUBY_DRILL = new RubyDrill(RubySupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final RubyBattleAxe RUBY_BATTLE_AXE = new RubyBattleAxe(RubySupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final RubyExcavator RUBY_EXCAVATOR = new RubyExcavator(RubySupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
-    public static final RubyPlow RUBY_PLOW = new RubyPlow(RubySupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final RubyPlow RUBY_PLOW = new RubyPlow(RubySupertool, 4, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
 
     //Obsidian
     public static final ObsidianSupertool ObsidianSupertool = new ObsidianSupertool();
@@ -269,7 +272,7 @@ public class EnhancedGear implements ModInitializer {
     public static final ObsidianDrill OBSIDIAN_DRILL = new ObsidianDrill(ObsidianSupertool, 4, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final ObsidianBattleAxe OBSIDIAN_BATTLE_AXE = new ObsidianBattleAxe(ObsidianSupertool, 8, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final ObsidianExcavator OBSIDIAN_EXCAVATOR = new ObsidianExcavator(ObsidianSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
-    public static final ObsidianPlow OBSIDIAN_PLOW = new ObsidianPlow(ObsidianSupertool, 4, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final ObsidianPlow OBSIDIAN_PLOW = new ObsidianPlow(ObsidianSupertool, 4, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
 
     //Tags
     public static final Tag<Block> STONEY = TagRegistry.block(new Identifier(modid, "stoney"));
@@ -339,7 +342,8 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "ruby_ore"), new BlockItem(RUBY_ORE, new Item.Settings().group(GROUP)));
         Registry.register(Registry.BLOCK, new Identifier(modid, "ruby_block"), RUBY_BLOCK);
         Registry.register(Registry.ITEM, new Identifier(modid, "ruby_block"), new BlockItem(RUBY_BLOCK, new Item.Settings().group(GROUP)));
-
+        Registry.register(Registry.BLOCK, new Identifier(modid, "compressed_obsidian"), COMPRESSED_OBSIDIAN);
+        Registry.register(Registry.ITEM, new Identifier(modid, "compressed_obsidian"), new BlockItem(COMPRESSED_OBSIDIAN, new Item.Settings().group(GROUP)));
         //Super tools
 
         //Iron

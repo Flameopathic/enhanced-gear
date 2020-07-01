@@ -1,6 +1,8 @@
 package net.enhanced.gear.items.supertools.ruby;
 
 import net.enhanced.gear.EnhancedGear;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,12 +16,12 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-import static net.enhanced.gear.Util.plower;
+import static net.enhanced.gear.Util.*;
 
 public class RubyPlow extends HoeItem {
 
-    public RubyPlow(ToolMaterial material, float attackSpeed, Settings settings) {
-        super(material, attackSpeed, settings);
+    public RubyPlow(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
     }
 
     @Override
@@ -27,6 +29,12 @@ public class RubyPlow extends HoeItem {
         super.onCraft(stack, world, player);
         Random random = new Random();
         EnchantmentHelper.enchant(random, stack, 15, false);
+    }
+
+    @Override
+    public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
+        cubeMiner(pos, checkWithToolType(EnhancedGear.RUBY_HOE), world, 3, stack, miner);
+        return super.postMine(stack, world, state, pos, miner);
     }
 
     @Override

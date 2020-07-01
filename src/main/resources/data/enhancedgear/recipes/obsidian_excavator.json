@@ -1,23 +1,12 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        " # ",
-        "#l#",
-        " / "
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:obsidian"
-        },
-        "l": {
-            "item": "enhancedgear:diamond_excavator"
-        },
-        "/": {
-            "item": "minecraft:stick"
-        }
+    "type": "minecraft:smithing",
+    "base": {
+        "item": "enhancedgear:diamond_excavator"
+    },
+    "addition": {
+        "item": "enhancedgear:compressed_obsidian"
     },
     "result": {
-        "item": "enhancedgear:obsidian_excavator",
-        "count": 1
+        "item": "enhancedgear:obsidian_excavator"
     }
 }

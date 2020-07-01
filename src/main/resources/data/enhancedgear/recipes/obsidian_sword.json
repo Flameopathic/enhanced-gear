@@ -1,20 +1,12 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#",
-        "#",
-        "e"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:obsidian"
-        },
-        "e": {
-            "item": "minecraft:diamond_sword"
-        }
+    "type": "minecraft:smithing",
+    "base": {
+        "item": "minecraft:diamond_sword"
+    },
+    "addition": {
+        "item": "enhancedgear:compressed_obsidian"
     },
     "result": {
-        "item": "enhancedgear:obsidian_sword",
-        "count": 1
+        "item": "enhancedgear:obsidian_sword"
     }
 }

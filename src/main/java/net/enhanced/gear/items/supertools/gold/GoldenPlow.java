@@ -1,21 +1,25 @@
 package net.enhanced.gear.items.supertools.gold;
 
-import net.enhanced.gear.EnhancedGear;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import static net.enhanced.gear.Util.plower;
+import static net.enhanced.gear.Util.*;
 
 public class GoldenPlow extends HoeItem {
 
-    public GoldenPlow(ToolMaterial material, float attackSpeed, Settings settings) {
-        super(material, attackSpeed, settings);
+    public GoldenPlow(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
+    }
+
+    @Override
+    public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
+        cubeMiner(pos, checkWithToolType(Items.GOLDEN_HOE), world, 3, stack, miner);
+        return super.postMine(stack, world, state, pos, miner);
     }
 
     @Override

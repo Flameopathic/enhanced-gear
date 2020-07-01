@@ -1,20 +1,12 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#e#",
-        "# #",
-        "# #"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:obsidian"
-        },
-        "e": {
-            "item": "minecraft:diamond_leggings"
-        }
+    "type": "minecraft:smithing",
+    "base": {
+        "item": "minecraft:diamond_leggings"
+    },
+    "addition": {
+        "item": "enhancedgear:compressed_obsidian"
     },
     "result": {
-        "item": "enhancedgear:obsidian_leggings",
-        "count": 1
+        "item": "enhancedgear:obsidian_leggings"
     }
 }

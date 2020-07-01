@@ -3,6 +3,8 @@ package net.enhanced.gear;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
@@ -47,7 +49,7 @@ public class Util {
         return (blockState, itemStack) -> tag.contains(blockState.getBlock());
     }
     public static BiFunction<BlockState, ItemStack, Boolean> checkWithToolType(Item toolType) {
-        return (blockState, itemStack) -> toolType.getMiningSpeed(itemStack, blockState) > 1;
+        return (blockState, itemStack) -> toolType.getMiningSpeedMultiplier(itemStack, blockState) > 1;
     }
     public static BiFunction<BlockState, ItemStack, Boolean> checkWithBlockList(List<Block> blocks) {
         return (blockState, itemStack) -> blocks.contains(blockState.getBlock());
@@ -65,7 +67,7 @@ public class Util {
                     if (canMine.apply(state, stack)) {
                         if (block.equals(currentBlock)) {
                             if (stack.getDamage() < stack.getMaxDamage()) {
-                                world.breakBlock(current, true);
+                                breakBlock(current, miner, state, world, stack);
                                 stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
                                 veinMiner(current, block, canMine, world, stack, miner);
                             }
@@ -86,7 +88,7 @@ public class Util {
                     BlockState state = world.getBlockState(current);
                     if (canMine.apply(state, stack)) {
                         if (stack.getDamage() < stack.getMaxDamage()) {
-                            world.breakBlock(current, true);
+                            breakBlock(current, miner, state, world, stack);
                             stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
                         }
                     }
@@ -105,7 +107,7 @@ public class Util {
                     BlockState state = world.getBlockState(current);
                     Block block = state.getBlock();
                     if ((block.equals(Blocks.DIRT) || block.equals(Blocks.GRASS_BLOCK)) &&
-                            world.getBlockState(current.up()).getBlock().isAir(world.getBlockState(current.up()))){
+                            world.getBlockState(current.up()).isAir()) {
                         if (stack.getDamage() < stack.getMaxDamage()) {
                             world.setBlockState(current, Blocks.FARMLAND.getDefaultState());
                             stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
@@ -114,5 +116,13 @@ public class Util {
                 }
             }
         }
+    }
+
+    public static void breakBlock(BlockPos pos, Entity breakingEntity, BlockState blockState, World world, ItemStack stack) {
+        world.syncWorldEvent(2001, pos, Block.getRawIdFromState(blockState));
+        BlockEntity blockEntity = blockState.getBlock().hasBlockEntity() ? world.getBlockEntity(pos) : null;
+        Block.dropStacks(blockState, world, pos, blockEntity, breakingEntity, stack);
+
+        world.setBlockState(pos, world.getFluidState(pos).getBlockState(), 3, 512);
     }
 }

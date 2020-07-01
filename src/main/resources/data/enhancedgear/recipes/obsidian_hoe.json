@@ -1,23 +1,12 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "##",
-        "e ",
-        "/ "
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:emerald"
-        },
-        "/": {
-            "item": "minecraft:stick"
-        },
-        "e": {
-            "item": "minecraft:diamond_hoe"
-        }
+    "type": "minecraft:smithing",
+    "base": {
+        "item": "minecraft:diamond_hoe"
+    },
+    "addition": {
+        "item": "enhancedgear:compressed_obsidian"
     },
     "result": {
-        "item": "enhancedgear:emerald_hoe",
-        "count": 1
+        "item": "enhancedgear:obsidian_hoe"
     }
 }

@@ -12,7 +12,7 @@ public class RubyTool implements ToolMaterial {
     }
 
     @Override
-    public float getMiningSpeed() {
+    public float getMiningSpeedMultiplier() {
         return 8.0f;
     }
 

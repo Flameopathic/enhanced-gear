@@ -1,19 +1,17 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "e #",
-        "# #"
+        "###",
+        "###",
+        "###"
     ],
     "key": {
         "#": {
             "item": "minecraft:obsidian"
-        },
-        "e": {
-            "item": "minecraft:diamond_boots"
         }
     },
     "result": {
-        "item": "enhancedgear:obsidian_boots",
+        "item": "enhancedgear:compressed_obsidian",
         "count": 1
     }
 }
