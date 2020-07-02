@@ -1,5 +1,5 @@
 {
-    "parent": "item/handheld",
+    "parent": "enhancedgear:item/drill",
     "textures": {
         "layer0": "enhancedgear:item/gold-drill"
     }

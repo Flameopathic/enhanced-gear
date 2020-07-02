@@ -106,10 +106,31 @@ public class Util {
                     BlockPos current = pos.add(x, y, z);
                     BlockState state = world.getBlockState(current);
                     Block block = state.getBlock();
-                    if ((block.equals(Blocks.DIRT) || block.equals(Blocks.GRASS_BLOCK)) &&
-                            world.getBlockState(current.up()).isAir()) {
+                    if ((block.equals(Blocks.DIRT) || block.equals(Blocks.GRASS_BLOCK))
+                            && world.getBlockState(current.up()).isAir()) {
                         if (stack.getDamage() < stack.getMaxDamage()) {
                             world.setBlockState(current, Blocks.FARMLAND.getDefaultState());
+                            stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public static void pather(BlockPos pos, World world, int diameter, ItemStack stack, LivingEntity miner) {
+        int min = (diameter / 2) * -1;
+        int max = (min * -1) + 1;
+        for (int x = min; x < max; x++) {
+            for (int y = min; y < max; y++) {
+                for (int z = min; z < max; z++) {
+                    BlockPos current = pos.add(x, y, z);
+                    BlockState state = world.getBlockState(current);
+                    Block block = state.getBlock();
+                    if ((block.equals(Blocks.DIRT) || block.equals(Blocks.GRASS_BLOCK))
+                            && world.getBlockState(current.up()).isAir()) {
+                        if (stack.getDamage() < stack.getMaxDamage()) {
+                            world.setBlockState(current, Blocks.GRASS_PATH.getDefaultState());
                             stack.damage(1, miner, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
                         }
                     }

@@ -4,19 +4,16 @@ import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
-import static net.enhanced.gear.Util.checkWithToolType;
-import static net.enhanced.gear.Util.cubeMiner;
+import static net.enhanced.gear.Util.*;
 
 public class RubyExcavator extends ShovelItem {
     public RubyExcavator(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
@@ -36,5 +33,15 @@ public class RubyExcavator extends ShovelItem {
         System.out.println(world.isClient);
         ((ServerWorld) world).spawnParticles(ParticleTypes.SMOKE, pos.getX(), pos.getY(), pos.getZ(), 100, 0.1, 0.1, 0.1, 0.1);
         return true;
+    }
+
+    @Override
+    public ActionResult useOnBlock(ItemUsageContext context) {
+        BlockPos pos = context.getBlockPos();
+        World world = context.getWorld();
+        ItemStack stack = context.getStack();
+        LivingEntity user = context.getPlayer();
+        pather(pos, world, 3, stack, user);
+        return ActionResult.SUCCESS;
     }
 }

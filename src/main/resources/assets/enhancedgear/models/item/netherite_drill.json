@@ -1,6 +1,6 @@
 {
     "parent": "enhancedgear:item/drill",
     "textures": {
-        "layer0": "enhancedgear:item/diamond-drill"
+        "layer0": "enhancedgear:item/netherite-drill"
     }
 }

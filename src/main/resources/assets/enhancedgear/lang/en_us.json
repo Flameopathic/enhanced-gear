@@ -86,5 +86,11 @@
     "item.enhancedgear.obsidian_drill": "Obsidian Drill",
     "item.enhancedgear.obsidian_battle_axe": "Obsidian Battle Axe",
     "item.enhancedgear.obsidian_excavator": "Obsidian Excavator",
-    "item.enhancedgear.obsidian_plow": "Obsidian Plow"
+    "item.enhancedgear.obsidian_plow": "Obsidian Plow",
+
+    "item.enhancedgear.netherite_crater_creator": "Netherite Crater Creator",
+    "item.enhancedgear.netherite_drill": "Netherite Drill",
+    "item.enhancedgear.netherite_battle_axe": "Netherite Battle Axe",
+    "item.enhancedgear.netherite_excavator": "Netherite Excavator",
+    "item.enhancedgear.netherite_plow": "Netherite Plow"
 }

@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "enhancedgear:block/compressed-obsidian"
+    "all": "enhancedgear:block/compressed_obsidian"
   }
 }

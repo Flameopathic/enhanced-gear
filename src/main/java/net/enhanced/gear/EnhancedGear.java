@@ -12,6 +12,7 @@ import net.enhanced.gear.items.supertools.diamond.*;
 import net.enhanced.gear.items.supertools.emerald.*;
 import net.enhanced.gear.items.supertools.gold.*;
 import net.enhanced.gear.items.supertools.iron.*;
+import net.enhanced.gear.items.supertools.netherite.*;
 import net.enhanced.gear.items.supertools.obsidian.ObsidianCraterCreator;
 import net.enhanced.gear.items.supertools.obsidian.ObsidianDrill;
 import net.enhanced.gear.items.supertools.obsidian.ObsidianExcavator;
@@ -160,6 +161,13 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_BATTLE_AXE));
                 stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_EXCAVATOR));
                 stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_PLOW));
+
+                //Netherite
+                stacks.add(new ItemStack(EnhancedGear.NETHERITE_CRATER_CREATOR));
+                stacks.add(new ItemStack(EnhancedGear.NETHERITE_DRILL));
+                stacks.add(new ItemStack(EnhancedGear.NETHERITE_BATTLE_AXE));
+                stacks.add(new ItemStack(EnhancedGear.NETHERITE_EXCAVATOR));
+                stacks.add(new ItemStack(EnhancedGear.NETHERITE_PLOW));
             })
             .build();
     /*
@@ -274,6 +282,14 @@ public class EnhancedGear implements ModInitializer {
     public static final ObsidianExcavator OBSIDIAN_EXCAVATOR = new ObsidianExcavator(ObsidianSupertool, 4.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
     public static final ObsidianPlow OBSIDIAN_PLOW = new ObsidianPlow(ObsidianSupertool, 4, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
 
+    //Netherite
+    public static final NetheriteSupertool NetheriteSupertool = new NetheriteSupertool();
+    public static final NetheriteCraterCreator NETHERITE_CRATER_CREATOR = new NetheriteCraterCreator(NetheriteSupertool, 5, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final NetheriteDrill NETHERITE_DRILL = new NetheriteDrill(NetheriteSupertool, 5, -3.3f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final NetheriteBattleAxe NETHERITE_BATTLE_AXE = new NetheriteBattleAxe(NetheriteSupertool, 9, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final NetheriteExcavator NETHERITE_EXCAVATOR = new NetheriteExcavator(NetheriteSupertool, 5.5f, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    public static final NetheritePlow NETHERITE_PLOW = new NetheritePlow(NetheriteSupertool, 5, -3.5f, new Item.Settings().group(SUPERTOOL_GROUP));
+    
     //Tags
     public static final Tag<Block> STONEY = TagRegistry.block(new Identifier(modid, "stoney"));
     public static final Tag<Block> ORES = TagRegistry.block(new Identifier(modid, "ores"));
@@ -388,7 +404,14 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "obsidian_excavator"), OBSIDIAN_EXCAVATOR);
         Registry.register(Registry.ITEM, new Identifier(modid, "obsidian_plow"), OBSIDIAN_PLOW);
 
-        //Cycles through all biomes, then checks for new ones. See handleBiome to see what they do for each biome
+        //Netherite
+        Registry.register(Registry.ITEM, new Identifier(modid, "netherite_battle_axe"), NETHERITE_BATTLE_AXE);
+        Registry.register(Registry.ITEM, new Identifier(modid, "netherite_crater_creator"), NETHERITE_CRATER_CREATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "netherite_drill"), NETHERITE_DRILL);
+        Registry.register(Registry.ITEM, new Identifier(modid, "netherite_excavator"), NETHERITE_EXCAVATOR);
+        Registry.register(Registry.ITEM, new Identifier(modid, "netherite_plow"), NETHERITE_PLOW);
+
+        //These cycle through all biomes, then checks for new ones. See handleBiome to see what they do for each biome
         Registry.BIOME.forEach(Util::handleBiome);
         RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
     }

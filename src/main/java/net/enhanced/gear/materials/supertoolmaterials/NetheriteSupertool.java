@@ -1,19 +1,18 @@
 package net.enhanced.gear.materials.supertoolmaterials;
 
-import net.enhanced.gear.EnhancedGear;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class ObsidianSupertool implements ToolMaterial {
+public class NetheriteSupertool implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 2222;
+        return 2031;
     }
 
     @Override
     public float getMiningSpeedMultiplier() {
-        return 2f;
+        return 3f;
     }
 
     @Override
@@ -28,11 +27,11 @@ public class ObsidianSupertool implements ToolMaterial {
 
     @Override
     public int getEnchantability() {
-        return 14;
+        return 10;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(EnhancedGear.COMPRESSED_OBSIDIAN);
+        return Ingredient.ofItems(Items.NETHERITE_INGOT);
     }
 }
