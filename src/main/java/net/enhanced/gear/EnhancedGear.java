@@ -141,6 +141,13 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.DIAMOND_EXCAVATOR));
                 stacks.add(new ItemStack(EnhancedGear.DIAMOND_PLOW));
 
+                //Netherite
+                stacks.add(new ItemStack(EnhancedGear.NETHERITE_CRATER_CREATOR));
+                stacks.add(new ItemStack(EnhancedGear.NETHERITE_DRILL));
+                stacks.add(new ItemStack(EnhancedGear.NETHERITE_BATTLE_AXE));
+                stacks.add(new ItemStack(EnhancedGear.NETHERITE_EXCAVATOR));
+                stacks.add(new ItemStack(EnhancedGear.NETHERITE_PLOW));
+                
                 //Emerald
                 stacks.add(new ItemStack(EnhancedGear.EMERALD_CRATER_CREATOR));
                 stacks.add(new ItemStack(EnhancedGear.EMERALD_DRILL));
@@ -161,13 +168,6 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_BATTLE_AXE));
                 stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_EXCAVATOR));
                 stacks.add(new ItemStack(EnhancedGear.OBSIDIAN_PLOW));
-
-                //Netherite
-                stacks.add(new ItemStack(EnhancedGear.NETHERITE_CRATER_CREATOR));
-                stacks.add(new ItemStack(EnhancedGear.NETHERITE_DRILL));
-                stacks.add(new ItemStack(EnhancedGear.NETHERITE_BATTLE_AXE));
-                stacks.add(new ItemStack(EnhancedGear.NETHERITE_EXCAVATOR));
-                stacks.add(new ItemStack(EnhancedGear.NETHERITE_PLOW));
             })
             .build();
     /*
