@@ -1,6 +1,5 @@
 package net.enhanced.gear.items.supertools.diamond;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.*;

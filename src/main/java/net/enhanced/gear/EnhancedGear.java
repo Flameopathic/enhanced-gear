@@ -232,7 +232,8 @@ public class EnhancedGear implements ModInitializer {
     public static final RubyOre RUBY_ORE = new RubyOre(FabricBlockSettings.of(Material.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(3, 3f));
     public static final RubyBlock RUBY_BLOCK = new RubyBlock(FabricBlockSettings.of(Material.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.METAL).strength(3, 3f));
 
-    public static final CompressedObsidian COMPRESSED_OBSIDIAN = new CompressedObsidian(FabricBlockSettings.of(Material.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(10, 10f));
+    public static final CompressedObsidian COMPRESSED_OBSIDIAN = new CompressedObsidian(FabricBlockSettings.of(Material.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.STONE).strength(10, 10f).lightLevel(7));
+
     //Super tools
     //Iron
     public static final IronSupertool IronSupertool = new IronSupertool();
