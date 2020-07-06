@@ -1,0 +1,13 @@
+{
+  "replace": true,
+  "values": [
+    "enhancedgear:diamond_excavator",
+    "enhancedgear:emerald_excavator",
+    "enhancedgear:golden_excavator",
+    "enhancedgear:iron_excavator",
+    "enhancedgear:netherite_excavator",
+    "enhancedgear:obsidian_excavator",
+    "enhancedgear:ruby_excavator",
+    "enhancedgear:enderite_excavator"
+  ]
+}

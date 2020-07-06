@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "enhancedgear:block/enderite_block"
+  }
+}

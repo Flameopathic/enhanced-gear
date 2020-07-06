@@ -9,6 +9,7 @@
     "minecraft:diamond_ore",
     "minecraft:nether_quartz_ore",
     "minecraft:lapis_ore",
-    "enhancedgear:ruby_ore"
+    "enhancedgear:ruby_ore",
+    "enhancedgear:fractured_end_stone"
   ]
 }

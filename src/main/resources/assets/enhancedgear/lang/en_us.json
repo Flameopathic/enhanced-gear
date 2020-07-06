@@ -32,17 +32,22 @@
     "item.enhancedgear.ruby_shovel": "Ruby Shovel",
     "item.enhancedgear.ruby_hoe": "Ruby Hoe",
 
-    "block.enhancedgear.ruby_ore": "Ruby Ore",
-    "block.enhancedgear.ruby_block": "Ruby Block",
-
-    "block.enhancedgear.compressed_obsidian": "Compressed Obsidian",
-
-    "item.enhancedgear.ruby": "Ruby",
     "item.enhancedgear.ruby.newline": "",
     "item.enhancedgear.ruby.warning_1": "Ruby items are too powerful",
     "item.enhancedgear.ruby.warning_2":  "for some enchantments,",
     "item.enhancedgear.ruby.warning_3":  "try using a lower enchanting",
     "item.enhancedgear.ruby.warning_4":  "level if they do not enchant.",
+
+    "item.enhancedgear.enderite_helmet": "Enderite Helmet",
+    "item.enhancedgear.enderite_chestplate": "Enderite Chestplate",
+    "item.enhancedgear.enderite_leggings": "Enderite Leggings",
+    "item.enhancedgear.enderite_boots": "Enderite Boots",
+
+    "item.enhancedgear.enderite_axe": "Enderite Axe",
+    "item.enhancedgear.enderite_sword": "Enderite Sword",
+    "item.enhancedgear.enderite_pickaxe": "Enderite Pickaxe",
+    "item.enhancedgear.enderite_shovel": "Enderite Shovel",
+    "item.enhancedgear.enderite_hoe": "Enderite Hoe",
 
     "item.enhancedgear.stone_helmet": "Stone Helmet",
     "item.enhancedgear.stone_vest": "Stone Vest",
@@ -92,5 +97,24 @@
     "item.enhancedgear.netherite_drill": "Netherite Drill",
     "item.enhancedgear.netherite_battle_axe": "Netherite Battle Axe",
     "item.enhancedgear.netherite_excavator": "Netherite Excavator",
-    "item.enhancedgear.netherite_plow": "Netherite Plow"
+    "item.enhancedgear.netherite_plow": "Netherite Plow",
+    
+    "item.enhancedgear.enderite_crater_creator": "Enderite Crater Creator",
+    "item.enhancedgear.enderite_drill": "Enderite Drill",
+    "item.enhancedgear.enderite_battle_axe": "Enderite Battle Axe",
+    "item.enhancedgear.enderite_excavator": "Enderite Excavator",
+    "item.enhancedgear.enderite_plow": "Enderite Plow",
+
+    "block.enhancedgear.ruby_ore": "Ruby Ore",
+    "block.enhancedgear.ruby_block": "Ruby Block",
+    "block.enhancedgear.compressed_obsidian": "Compressed Obsidian",
+    "block.enhancedgear.fractured_end_stone": "Fractured End Stone",
+    "block.enhancedgear.enderite_block": "Enderite Block",
+
+    "item.enhancedgear.ruby": "Ruby",
+    "item.enhancedgear.onyx": "Onyx",
+    "item.enhancedgear.enderite_shard": "Enderite Shard",
+    "item.enhancedgear.enderite_crystal": "Enderite Crystal",
+
+    "obsidian_armor_ability": "Obsidian Armor Ability"
 }

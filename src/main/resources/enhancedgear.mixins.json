@@ -1,12 +1,15 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.enhanced.gear.mixin",
+  "package": "flameopathic.enhancedgear.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "LivingEntityMixin",
+    "EnchantmentMixin",
+    "CarverMixin",
+    "EnchantmentMixin",
     "ItemEntityMixin",
-    "ItemMixin"
+    "ItemMixin",
+    "LivingEntityMixin"
   ],
   "client": [
   ],

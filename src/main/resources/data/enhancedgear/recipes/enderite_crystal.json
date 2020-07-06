@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#d#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "enhancedgear:enderite_shard"
+        },
+        "d": {
+            "item": "minecraft:dragon_breath"
+        }
+    },
+    "result": {
+        "item": "enhancedgear:enderite_crystal",
+        "count": 1
+    }
+}

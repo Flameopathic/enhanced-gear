@@ -10,8 +10,8 @@
     "KingTJB"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://curseforge.com/minecraft/mc-mods/enhanced-gear",
+    "sources": "https://github.com/Flameopathic/Enhanced-Gear"
   },
 
   "license": "CC0-1.0",
@@ -20,7 +20,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.enhanced.gear.EnhancedGear"
+      "flameopathic.enhancedgear.EnhancedGear"
+    ],
+    "client": [
+      "flameopathic.enhancedgear.EnhancedGearClient"
     ]
   },
   "mixins": [

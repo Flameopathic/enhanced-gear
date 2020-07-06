@@ -1,0 +1,6 @@
+{
+    "parent": "enhancedgear:item/drill",
+    "textures": {
+        "layer0": "enhancedgear:item/enderite_drill"
+    }
+}

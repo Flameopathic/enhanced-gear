@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:smithing",
+    "base": {
+        "item": "enhancedgear:netherite_drill"
+    },
+    "addition": {
+        "item": "enhancedgear:enderite_crystal"
+    },
+    "result": {
+        "item": "enhancedgear:enderite_drill"
+    }
+}

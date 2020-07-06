@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "enhancedgear:enderite_crystal"
+        }
+    },
+    "result": {
+        "item": "enhancedgear:enderite_block",
+        "count": 1
+    }
+}

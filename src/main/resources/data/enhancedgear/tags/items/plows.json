@@ -1,0 +1,13 @@
+{
+  "replace": true,
+  "values": [
+    "enhancedgear:diamond_plow",
+    "enhancedgear:emerald_plow",
+    "enhancedgear:golden_plow",
+    "enhancedgear:iron_plow",
+    "enhancedgear:netherite_plow",
+    "enhancedgear:obsidian_plow",
+    "enhancedgear:ruby_plow",
+    "enhancedgear:enderite_plow"
+  ]
+}
