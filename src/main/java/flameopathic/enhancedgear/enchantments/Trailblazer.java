@@ -1,13 +1,13 @@
 package flameopathic.enhancedgear.enchantments;
 
-import flameopathic.enhancedgear.EnhancedGear;
+import flameopathic.enhancedgear.supertoolbases.ExcavatorItem;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 
-public class Pathmaker extends Enchantment {
-    public Pathmaker(Rarity weight, EnchantmentTarget type, EquipmentSlot[] slotTypes) {
+public class Trailblazer extends Enchantment {
+    public Trailblazer(Rarity weight, EnchantmentTarget type, EquipmentSlot[] slotTypes) {
         super(weight, type, slotTypes);
     }
 
@@ -28,6 +28,6 @@ public class Pathmaker extends Enchantment {
 
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
-        return stack.getItem().isIn(EnhancedGear.EXCAVATORS);
+        return stack.getItem() instanceof ExcavatorItem;
     }
 }

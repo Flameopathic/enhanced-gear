@@ -2,6 +2,7 @@ package flameopathic.enhancedgear;
 
 import flameopathic.enhancedgear.armor.*;
 import flameopathic.enhancedgear.blocks.*;
+import flameopathic.enhancedgear.enchantments.CustomEnchantmentTargets;
 import flameopathic.enhancedgear.items.EnderiteCrystal;
 import flameopathic.enhancedgear.items.Onyx;
 import flameopathic.enhancedgear.items.Ruby;
@@ -23,17 +24,17 @@ import flameopathic.enhancedgear.materials.supertoolmaterials.*;
 import flameopathic.enhancedgear.materials.toolmaterials.EmeraldTool;
 import flameopathic.enhancedgear.materials.toolmaterials.ObsidianTool;
 import flameopathic.enhancedgear.materials.toolmaterials.RubyTool;
-import flameopathic.enhancedgear.util.CustomOreFeatureConfig;
+import flameopathic.enhancedgear.util.features.CustomOreFeatureConfig;
 import flameopathic.enhancedgear.util.Util;
 import flameopathic.enhancedgear.enchantments.Cultivation;
-import flameopathic.enhancedgear.enchantments.Pathmaker;
+import flameopathic.enhancedgear.enchantments.Trailblazer;
 import flameopathic.enhancedgear.items.EnderiteShard;
 import flameopathic.enhancedgear.items.supertools.obsidian.ObsidianExcavator;
 import flameopathic.enhancedgear.items.supertools.obsidian.ObsidianPlow;
 import flameopathic.enhancedgear.items.supertools.obsidian.ObsidianBattleAxe;
 import flameopathic.enhancedgear.materials.toolmaterials.EnderiteTool;
 import flameopathic.enhancedgear.networking.NetherPortalPacket;
-import flameopathic.enhancedgear.util.CustomOreFeature;
+import flameopathic.enhancedgear.util.features.CustomOreFeature;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -45,7 +46,6 @@ import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -144,6 +144,7 @@ public class EnhancedGear implements ModInitializer {
                 stacks.add(new ItemStack(EnhancedGear.COMPRESSED_OBSIDIAN));
                 stacks.add(new ItemStack(EnhancedGear.FRACTURED_END_STONE));
                 stacks.add(new ItemStack(EnhancedGear.ENDERITE_BLOCK));
+                stacks.add(new ItemStack(EnhancedGear.END_ONYX_ORE));
             })
             .build();
 
@@ -218,7 +219,7 @@ public class EnhancedGear implements ModInitializer {
     public static final Item.Settings SUPERTOOL = new Item.Settings().group(SUPERTOOL_GROUP);
 
     //Emerald tools
-    public static final flameopathic.enhancedgear.materials.toolmaterials.EmeraldTool EmeraldTool = new EmeraldTool();
+    public static final EmeraldTool EmeraldTool = new EmeraldTool();
     public static final EmeraldSword EMERALD_SWORD = new EmeraldSword(EmeraldTool, 3, -2.4f, MAIN);
     public static final EmeraldPickaxe EMERALD_PICKAXE = new EmeraldPickaxe(EmeraldTool, 1, -3f, MAIN);
     public static final EmeraldAxe EMERALD_AXE = new EmeraldAxe(EmeraldTool, 5, -3, MAIN);
@@ -226,14 +227,14 @@ public class EnhancedGear implements ModInitializer {
     public static final EmeraldHoe EMERALD_HOE = new EmeraldHoe(EmeraldTool, -3, 3f, MAIN);
 
     //Emerald armor
-    public static final flameopathic.enhancedgear.materials.armormaterials.EmeraldArmor EmeraldArmor = new EmeraldArmor();
+    public static final EmeraldArmor EmeraldArmor = new EmeraldArmor();
     public static final EmeraldArmorBase EMERALD_HELMET = new EmeraldArmorBase(EmeraldArmor, EquipmentSlot.HEAD, MAIN);
     public static final EmeraldArmorBase EMERALD_CHESTPLATE = new EmeraldArmorBase(EmeraldArmor, EquipmentSlot.CHEST, MAIN);
     public static final EmeraldArmorBase EMERALD_LEGGINGS = new EmeraldArmorBase(EmeraldArmor, EquipmentSlot.LEGS, MAIN);
     public static final EmeraldArmorBase EMERALD_BOOTS = new EmeraldArmorBase(EmeraldArmor, EquipmentSlot.FEET, MAIN);
 
     //Obsidian tools
-    public static final flameopathic.enhancedgear.materials.toolmaterials.ObsidianTool ObsidianTool = new ObsidianTool();
+    public static final ObsidianTool ObsidianTool = new ObsidianTool();
     public static final ObsidianSword OBSIDIAN_SWORD = new ObsidianSword(ObsidianTool, 3, -2.4f, MAIN);
     public static final ObsidianPickaxe OBSIDIAN_PICKAXE = new ObsidianPickaxe(ObsidianTool, 1, -3f, MAIN);
     public static final ObsidianAxe OBSIDIAN_AXE = new ObsidianAxe(ObsidianTool, 5f, -3f, MAIN);
@@ -241,14 +242,14 @@ public class EnhancedGear implements ModInitializer {
     public static final ObsidianHoe OBSIDIAN_HOE = new ObsidianHoe(ObsidianTool, -3, 3f, MAIN);
 
     //Obsidian armor
-    public static final flameopathic.enhancedgear.materials.armormaterials.ObsidianArmor ObsidianArmor = new ObsidianArmor();
+    public static final ObsidianArmor ObsidianArmor = new ObsidianArmor();
     public static final ObsidianArmorBase OBSIDIAN_HELMET = new ObsidianArmorBase(ObsidianArmor, EquipmentSlot.HEAD, MAIN);
     public static final ObsidianArmorBase OBSIDIAN_CHESTPLATE = new ObsidianArmorBase(ObsidianArmor, EquipmentSlot.CHEST, MAIN);
     public static final ObsidianArmorBase OBSIDIAN_LEGGINGS = new ObsidianArmorBase(ObsidianArmor, EquipmentSlot.LEGS, MAIN);
     public static final ObsidianArmorBase OBSIDIAN_BOOTS = new ObsidianArmorBase(ObsidianArmor, EquipmentSlot.FEET, MAIN);
 
     //Ruby tools
-    public static final flameopathic.enhancedgear.materials.toolmaterials.RubyTool RubyTool = new RubyTool();
+    public static final RubyTool RubyTool = new RubyTool();
     public static final RubySword RUBY_SWORD = new RubySword(RubyTool, 3, -2.4f, MAIN);
     public static final RubyPickaxe RUBY_PICKAXE = new RubyPickaxe(RubyTool, 1, -3f, MAIN);
     public static final RubyAxe RUBY_AXE = new RubyAxe(RubyTool, 5, -3f, MAIN);
@@ -256,7 +257,7 @@ public class EnhancedGear implements ModInitializer {
     public static final RubyHoe RUBY_HOE = new RubyHoe(RubyTool, -3, 3f, MAIN);
 
     //Ruby armor
-    public static final flameopathic.enhancedgear.materials.armormaterials.RubyArmor RubyArmor = new RubyArmor();
+    public static final RubyArmor RubyArmor = new RubyArmor();
     public static final RubyArmorBase RUBY_HELMET = new RubyArmorBase(RubyArmor, EquipmentSlot.HEAD, MAIN);
     public static final RubyArmorBase RUBY_CHESTPLATE = new RubyArmorBase(RubyArmor, EquipmentSlot.CHEST, MAIN);
     public static final RubyArmorBase RUBY_LEGGINGS = new RubyArmorBase(RubyArmor, EquipmentSlot.LEGS, MAIN);
@@ -271,14 +272,14 @@ public class EnhancedGear implements ModInitializer {
     public static final EnderiteHoe ENDERITE_HOE = new EnderiteHoe(EnderiteTool, -3, 3f, MAIN);
 
     //Enderite armor
-    public static final flameopathic.enhancedgear.materials.armormaterials.EnderiteArmor EnderiteArmor = new EnderiteArmor();
+    public static final EnderiteArmor EnderiteArmor = new EnderiteArmor();
     public static final EnderiteArmorBase ENDERITE_HELMET = new EnderiteArmorBase(EnderiteArmor, EquipmentSlot.HEAD, MAIN);
     public static final EnderiteArmorBase ENDERITE_CHESTPLATE = new EnderiteArmorBase(EnderiteArmor, EquipmentSlot.CHEST, MAIN);
     public static final EnderiteArmorBase ENDERITE_LEGGINGS = new EnderiteArmorBase(EnderiteArmor, EquipmentSlot.LEGS, MAIN);
     public static final EnderiteArmorBase ENDERITE_BOOTS = new EnderiteArmorBase(EnderiteArmor, EquipmentSlot.FEET, MAIN);
 
     //Stone armor
-    public static final flameopathic.enhancedgear.materials.armormaterials.StoneArmor StoneArmor = new StoneArmor();
+    public static final StoneArmor StoneArmor = new StoneArmor();
     public static final StoneArmorBase STONE_HELMET = new StoneArmorBase(StoneArmor, EquipmentSlot.HEAD, MAIN);
     public static final StoneArmorBase STONE_VEST = new StoneArmorBase(StoneArmor, EquipmentSlot.CHEST, MAIN);
     public static final StoneArmorBase STONE_LEG_PLATING = new StoneArmorBase(StoneArmor, EquipmentSlot.LEGS, MAIN);
@@ -286,7 +287,7 @@ public class EnhancedGear implements ModInitializer {
 
     //Supertools
     //Iron
-    public static final flameopathic.enhancedgear.materials.supertoolmaterials.IronSupertool IronSupertool = new IronSupertool();
+    public static final IronSupertool IronSupertool = new IronSupertool();
     public static final IronCraterCreator IRON_CRATER_CREATOR = new IronCraterCreator(IronSupertool, 4, -3.3f, SUPERTOOL);
     public static final IronDrill IRON_DRILL = new IronDrill(IronSupertool, 4, -3.3f, SUPERTOOL);
     public static final IronBattleAxe IRON_BATTLE_AXE = new IronBattleAxe(IronSupertool, 8, -3.5f, SUPERTOOL);
@@ -302,7 +303,7 @@ public class EnhancedGear implements ModInitializer {
     public static final GoldenPlow GOLDEN_PLOW = new GoldenPlow(GoldenSupertool, 4, -3.5f, SUPERTOOL);
 
     //Diamond
-    public static final flameopathic.enhancedgear.materials.supertoolmaterials.DiamondSupertool DiamondSupertool = new DiamondSupertool();
+    public static final DiamondSupertool DiamondSupertool = new DiamondSupertool();
     public static final DiamondCraterCreator DIAMOND_CRATER_CREATOR = new DiamondCraterCreator(DiamondSupertool, 4, -3.3f, SUPERTOOL);
     public static final DiamondDrill DIAMOND_DRILL = new DiamondDrill(DiamondSupertool, 4, -3.3f, SUPERTOOL);
     public static final DiamondBattleAxe DIAMOND_BATTLE_AXE = new DiamondBattleAxe(DiamondSupertool, 8, -3.5f, SUPERTOOL);
@@ -310,7 +311,7 @@ public class EnhancedGear implements ModInitializer {
     public static final DiamondPlow DIAMOND_PLOW = new DiamondPlow(DiamondSupertool, 4, -3.5f, SUPERTOOL);
 
     //Emerald
-    public static final flameopathic.enhancedgear.materials.supertoolmaterials.EmeraldSupertool EmeraldSupertool = new EmeraldSupertool();
+    public static final EmeraldSupertool EmeraldSupertool = new EmeraldSupertool();
     public static final EmeraldCraterCreator EMERALD_CRATER_CREATOR = new EmeraldCraterCreator(EmeraldSupertool, 4, -3.3f, SUPERTOOL);
     public static final EmeraldDrill EMERALD_DRILL = new EmeraldDrill(EmeraldSupertool, 4, -3.3f, SUPERTOOL);
     public static final EmeraldBattleAxe EMERALD_BATTLE_AXE = new EmeraldBattleAxe(EmeraldSupertool, 8, -3.5f, SUPERTOOL);
@@ -318,7 +319,7 @@ public class EnhancedGear implements ModInitializer {
     public static final EmeraldPlow EMERALD_PLOW = new EmeraldPlow(EmeraldSupertool, 4, -3.5f, SUPERTOOL);
 
     //Ruby
-    public static final flameopathic.enhancedgear.materials.supertoolmaterials.RubySupertool RubySupertool = new RubySupertool();
+    public static final RubySupertool RubySupertool = new RubySupertool();
     public static final RubyCraterCreator RUBY_CRATER_CREATOR = new RubyCraterCreator(RubySupertool, 4, -3.3f, SUPERTOOL);
     public static final RubyDrill RUBY_DRILL = new RubyDrill(RubySupertool, 4, -3.3f, SUPERTOOL);
     public static final RubyBattleAxe RUBY_BATTLE_AXE = new RubyBattleAxe(RubySupertool, 8, -3.5f, SUPERTOOL);
@@ -361,10 +362,12 @@ public class EnhancedGear implements ModInitializer {
     public static final EnderiteBlock ENDERITE_BLOCK = new EnderiteBlock(FabricBlockSettings.of(Material.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.METAL).strength(10, 10f));
     public static final RubyOre RUBY_ORE = new RubyOre(FabricBlockSettings.of(Material.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.STONE).strength(3, 3f));
     public static final RubyBlock RUBY_BLOCK = new RubyBlock(FabricBlockSettings.of(Material.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.METAL).strength(3, 3f));
+    public static final EndOnyxOre END_ONYX_ORE = new EndOnyxOre(FabricBlockSettings.of(Material.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.STONE).strength(3, 3f));
 
+    
     //Enchantments
-    public static final Cultivation CULTIVATION = new Cultivation(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.BREAKABLE, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
-    public static final Pathmaker PATHMAKER = new Pathmaker(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.BREAKABLE, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+    public static final Cultivation CULTIVATION = new Cultivation(Enchantment.Rarity.UNCOMMON, CustomEnchantmentTargets.PLOWS, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+    public static final Trailblazer TRAILBLAZER = new Trailblazer(Enchantment.Rarity.UNCOMMON, CustomEnchantmentTargets.EXCAVATORS, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 
     //Tags
     public static final Tag<Block> STONEY = TagRegistry.block(new Identifier(modid, "stoney"));
@@ -520,10 +523,12 @@ public class EnhancedGear implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(modid, "fractured_end_stone"), new BlockItem(FRACTURED_END_STONE, MAIN));
         Registry.register(Registry.BLOCK, new Identifier(modid, "enderite_block"), ENDERITE_BLOCK);
         Registry.register(Registry.ITEM, new Identifier(modid, "enderite_block"), new BlockItem(ENDERITE_BLOCK, MAIN));
+        Registry.register(Registry.BLOCK, new Identifier(modid, "end_onyx_ore"), END_ONYX_ORE);
+        Registry.register(Registry.ITEM, new Identifier(modid, "end_onyx_ore"), new BlockItem(END_ONYX_ORE, MAIN));
 
         //Enchantments
         Registry.register(Registry.ENCHANTMENT, new Identifier(modid, "cultivation"), CULTIVATION);
-        Registry.register(Registry.ENCHANTMENT, new Identifier(modid, "pathmaker"), PATHMAKER);
+        Registry.register(Registry.ENCHANTMENT, new Identifier(modid, "trailblazer"), TRAILBLAZER);
 
         //Packets
         ServerSidePacketRegistry.INSTANCE.register(NETHER_PORTAL_PACKET, new NetherPortalPacket());

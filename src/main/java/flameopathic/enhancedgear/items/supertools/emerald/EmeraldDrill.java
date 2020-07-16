@@ -1,26 +1,11 @@
 package flameopathic.enhancedgear.items.supertools.emerald;
 
-import flameopathic.enhancedgear.EnhancedGear;
-import flameopathic.enhancedgear.util.Util;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
+import flameopathic.enhancedgear.supertoolbases.DrillItem;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
-public class EmeraldDrill extends PickaxeItem {
+public class EmeraldDrill extends DrillItem {
 
     public EmeraldDrill(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
-    }
-
-    @Override
-    public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-        Block block = state.getBlock();
-        Util.veinMiner(pos, block, Util.checkWithTag(EnhancedGear.ORES), world, stack, miner);
-        return true;
     }
 }

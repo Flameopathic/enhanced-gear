@@ -1,6 +1,7 @@
 package flameopathic.enhancedgear.util;
 
 import flameopathic.enhancedgear.EnhancedGear;
+import flameopathic.enhancedgear.util.features.CustomOreFeatureConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -43,7 +44,7 @@ public class Util {
                                     4       //maximum vein size
                             )).createDecoratedFeature(
                             Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
-                                    3,     //maximum number per chunk
+                                    2,     //maximum number per chunk
                                     0,
                                     0,
                                     15  //maximum y coordinate
@@ -71,6 +72,21 @@ public class Util {
                                     0,
                                     256  //maximum y coordinate
                                     ))));
+            //End onyx ore
+            biome.addFeature(
+                    GenerationStep.Feature.UNDERGROUND_ORES,
+                    EnhancedGear.CUSTOM_ORE_FEATURE.configure(
+                            new CustomOreFeatureConfig(
+                                    Blocks.END_STONE.getDefaultState(),
+                                    EnhancedGear.END_ONYX_ORE.getDefaultState(),
+                                    8       //maximum vein size
+                            )).createDecoratedFeature(
+                            Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
+                                    20,    //maximum number per chunk
+                                    0,
+                                    0,
+                                    256 //maximum y coordinate
+                            ))));
         }
     }
 
@@ -153,6 +169,9 @@ public class Util {
     }
 
     public static void pather(BlockPos pos, World world, int pathDiameter, ItemStack stack, LivingEntity miner) {
+        if (EnchantmentHelper.getEquipmentLevel(EnhancedGear.TRAILBLAZER, miner) == 1){
+            pathDiameter += 2;
+        }
         int min = (pathDiameter / 2) * -1;
         int max = (min * -1) + 1;
         for (int x = min; x < max; x++) {

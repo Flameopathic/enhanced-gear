@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "enhancedgear:item/obsidian-legs"
+        "layer0": "enhancedgear:item/obsidian_leggings"
     }
 }

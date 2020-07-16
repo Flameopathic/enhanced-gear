@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "enhancedgear:item/stone-helm"
+        "layer0": "enhancedgear:item/stone_helmet"
     }
 }

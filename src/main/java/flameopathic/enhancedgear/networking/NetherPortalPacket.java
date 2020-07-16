@@ -33,7 +33,9 @@ public class NetherPortalPacket implements PacketConsumer {
                     if(bootsStack.getItem().equals(EnhancedGear.OBSIDIAN_BOOTS)){
                         if (player.isOnFire()) {
                             players.put(player, 100);
-                            packetContext.getPlayer().addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 250, 3, false, false));
+                            if (player.getMaxNetherPortalTime() > 20) {
+                                packetContext.getPlayer().addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 250, 3, false, false));
+                            }
                         }
                     }
                 }

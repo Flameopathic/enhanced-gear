@@ -24,6 +24,9 @@
     ],
     "client": [
       "flameopathic.enhancedgear.EnhancedGearClient"
+    ],
+    "mm:early_risers": [
+      "flameopathic.enhancedgear.asm.mm.EarlyRiser"
     ]
   },
   "mixins": [

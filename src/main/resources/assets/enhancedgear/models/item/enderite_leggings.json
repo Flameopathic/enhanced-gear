@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "enhancedgear:item/enderite-leg"
+        "layer0": "enhancedgear:item/enderite_leggings"
     }
 }

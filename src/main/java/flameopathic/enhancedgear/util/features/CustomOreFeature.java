@@ -1,4 +1,4 @@
-package flameopathic.enhancedgear.util;
+package flameopathic.enhancedgear.util.features;
 
 import com.mojang.serialization.Codec;
 import java.util.BitSet;

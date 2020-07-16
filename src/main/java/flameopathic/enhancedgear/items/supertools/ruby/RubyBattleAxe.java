@@ -1,21 +1,15 @@
 package flameopathic.enhancedgear.items.supertools.ruby;
 
-import flameopathic.enhancedgear.util.Util;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
+import flameopathic.enhancedgear.supertoolbases.BattleAxeItem;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class RubyBattleAxe extends AxeItem {
+public class RubyBattleAxe extends BattleAxeItem {
 
     public RubyBattleAxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
@@ -26,12 +20,5 @@ public class RubyBattleAxe extends AxeItem {
         super.onCraft(stack, world, player);
         Random random = new Random();
         EnchantmentHelper.enchant(random, stack, 15, false);
-    }
-
-    @Override
-    public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-        Block block = state.getBlock();
-        Util.veinMiner(pos, block, Util.checkWithTag(BlockTags.LOGS), world, stack, miner);
-        return true;
     }
 }

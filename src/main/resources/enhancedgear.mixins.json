@@ -4,9 +4,7 @@
   "package": "flameopathic.enhancedgear.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "EnchantmentMixin",
     "CarverMixin",
-    "EnchantmentMixin",
     "ItemEntityMixin",
     "ItemMixin",
     "LivingEntityMixin"

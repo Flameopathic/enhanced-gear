@@ -1,6 +1,7 @@
 package flameopathic.enhancedgear.enchantments;
 
 import flameopathic.enhancedgear.EnhancedGear;
+import flameopathic.enhancedgear.supertoolbases.PlowItem;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
@@ -28,6 +29,6 @@ public class Cultivation extends Enchantment {
 
     @Override
     public boolean isAcceptableItem(ItemStack stack) {
-        return stack.getItem().isIn(EnhancedGear.PLOWS);
+        return stack.getItem() instanceof PlowItem;
     }
 }

@@ -110,11 +110,15 @@
     "block.enhancedgear.compressed_obsidian": "Compressed Obsidian",
     "block.enhancedgear.fractured_end_stone": "Fractured End Stone",
     "block.enhancedgear.enderite_block": "Enderite Block",
+    "block.enhancedgear.end_onyx_ore": "End Onyx Ore",
 
     "item.enhancedgear.ruby": "Ruby",
     "item.enhancedgear.onyx": "Onyx",
     "item.enhancedgear.enderite_shard": "Enderite Shard",
     "item.enhancedgear.enderite_crystal": "Enderite Crystal",
+
+    "enchantment.enhancedgear.cultivation": "Cultivation",
+    "enchantment.enhancedgear.trailblazer": "Trailblazer",
 
     "obsidian_armor_ability": "Obsidian Armor Ability"
 }
